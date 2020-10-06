@@ -1,13 +1,12 @@
-﻿// <copyright file="Program.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
-// </copyright>
+﻿using System;
 
 namespace Hotel
 {
-    /// <summary>
-    /// This is the main program.
-    /// </summary>
-    internal class Program
+    class Program
     {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
     }
 }
