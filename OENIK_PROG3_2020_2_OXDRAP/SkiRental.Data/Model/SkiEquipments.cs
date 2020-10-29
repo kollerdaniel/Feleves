@@ -31,8 +31,11 @@ namespace SkiRental.Data
         [Required]
         public string Difficulty { get; set; }
 
-        [MaxLength(20)]
         [Required]
-        public string Status { get; set; } // <= available or not
+        public bool Status { get; set; } // <= available or not
+
+        public virtual Basket Basket { get; set; }
+        [ForeignKey(nameof(Basket))]
+        public int BasketId { get; set; }
     }
 }

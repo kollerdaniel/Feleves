@@ -12,8 +12,15 @@ namespace SkiRental.Data
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderId { get; set; }
-        [ForeignKey("Customer")]
+
+        public virtual Customer Customer { get; set; }
+        [ForeignKey(nameof(Customer))]
         public int CustomerId { get; set; }
+
+        public virtual Basket Basket { get; set; }
+        [ForeignKey(nameof(Basket))]
+        public int BasketId { get; set; }
+
         [Required]
         public DateTime FirstDate { get; set; }
         
@@ -24,12 +31,10 @@ namespace SkiRental.Data
         [Required]
         public string Payment { get; set; }
 
-        [MaxLength(20)]
         [Required]
-        public int Quantity { get; set; }
+        public bool CustomerPaid { get; set; }
 
-        [MaxLength(20)]
         [Required]
-        public bool Promotion { get; set; }
+        public int? Promotion { get; set; }
     }
 }

@@ -44,5 +44,13 @@ namespace SkiRental.Data
 
         [Required]
         public int Postcode { get; set; }
+
+        [NotMapped]
+        public virtual ICollection<Order> Orders { get; set; }
+
+        public Customer()
+        {
+            Orders = new HashSet<Order>();
+        }
     }
 }
