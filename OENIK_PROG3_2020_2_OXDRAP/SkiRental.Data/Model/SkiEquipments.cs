@@ -21,6 +21,12 @@ namespace SkiRental.Data
         public int SkiEquipmentsId { get; set; }
 
         /// <summary>
+        /// Gets or sets the basket id of the equipments, and it is a foreign key.
+        /// </summary>
+        [ForeignKey(nameof(Basket))]
+        public int BasketId { get; set; }
+
+        /// <summary>
         /// Gets or sets the name of the equipments.
         /// </summary>
         [MaxLength(20)]
@@ -63,11 +69,5 @@ namespace SkiRental.Data
         /// Gets or sets the basket of the equipments.
         /// </summary>
         public virtual Basket Basket { get; set; }
-
-        /// <summary>
-        /// Gets or sets the basket id of the equipments, and it is a foreign key.
-        /// </summary>
-        [ForeignKey(nameof(Basket))]
-        public int BasketId { get; set; }
     }
 }

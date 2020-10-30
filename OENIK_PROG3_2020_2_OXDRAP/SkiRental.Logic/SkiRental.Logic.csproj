@@ -15,4 +15,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SkiRental.Data\SkiRental.Data.csproj" />
+    <ProjectReference Include="..\SkiRental.Repository\SkiRental.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
