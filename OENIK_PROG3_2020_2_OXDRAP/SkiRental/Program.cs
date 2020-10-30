@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace SkiRental
+namespace SkiRental.Program
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Factory f = new Factory();
         }
     }
 }

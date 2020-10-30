@@ -38,9 +38,9 @@ namespace SkiRental.Repository
             this.ctx.SaveChanges();
         }
 
-        public void Remove(T entity)
+        public void Remove(int id)
         {
-            this.ctx.Set<T>().Remove(entity);
+            this.ctx.Set<T>().Remove(this.GetOne(id));
             this.ctx.SaveChanges();
         }
     }

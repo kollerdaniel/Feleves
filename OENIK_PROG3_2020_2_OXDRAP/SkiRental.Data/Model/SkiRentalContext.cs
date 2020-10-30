@@ -141,6 +141,8 @@
             modelBuilder.Entity<Order>().HasData(o0, o1, o2, o3, o4, o5, o6, o7, o8, o9);
             modelBuilder.Entity<SkiEquipments>().HasData(s00, s01, s02, s03, s10, s11, s12, s13, s20, s21, s22, s23);
             modelBuilder.Entity<Basket>().HasData(b0, b1, b2, b3, b4, b5, b6, b7, b8, b9);
+            
+            ;
         }
     }
 }

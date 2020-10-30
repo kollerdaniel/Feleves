@@ -73,5 +73,10 @@ namespace SkiRental.Data
         /// </summary>
         [Required]
         public int? Promotion { get; set; }
+
+        public override string ToString()
+        {
+            return ($"{this.Payment}");
+        }
     }
 }

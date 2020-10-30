@@ -91,5 +91,10 @@ namespace SkiRental.Data
         {
             this.Orders = new HashSet<Order>();
         }
+
+        public override string ToString()
+        {
+            return ($"{this.Name}, {this.Password}, {this.Difficulty}");
+        }
     }
 }

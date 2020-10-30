@@ -69,5 +69,10 @@ namespace SkiRental.Data
         /// Gets or sets the basket of the equipments.
         /// </summary>
         public virtual Basket Basket { get; set; }
+
+        public override string ToString()
+        {
+            return $"{this.Name}, {this.Manufacturer}";
+        }
     }
 }

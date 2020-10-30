@@ -16,6 +16,6 @@ namespace SkiRental.Repository
 
         void Insert(T entity);
 
-        void Remove(T entity);
+        void Remove(int id);
     }
 }
