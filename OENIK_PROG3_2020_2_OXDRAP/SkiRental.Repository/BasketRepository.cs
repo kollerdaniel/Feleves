@@ -1,26 +1,23 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using SkiRental.Data;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿// <copyright file="BasketRepository.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SkiRental.Repository
 {
-    public class BasketRepository : Repository<Basket>, IBasketRepository
+    using System;
+    using Microsoft.EntityFrameworkCore;
+    using SkiRental.Data;
+
+    public class BasketRepository : SkirentalRepository<Basket>, IBasketRepository
     {
-        public BasketRepository(DbContext ctx) : base(ctx) { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BasketRepository"/> class.
+        /// </summary>
+        /// <param name="ctx"></param>
+        public BasketRepository(DbContext ctx)
+            : base(ctx) { }
 
-        public void Add()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <inheritdoc/>
         public override Basket GetOne(int id)
         {
             throw new NotImplementedException();

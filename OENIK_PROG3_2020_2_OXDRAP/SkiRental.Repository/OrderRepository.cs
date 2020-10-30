@@ -1,10 +1,15 @@
-﻿namespace SkiRental.Repository
+﻿// <copyright file="OrderRepository.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace SkiRental.Repository
 {
     using System;
+    using System.Linq;
     using Microsoft.EntityFrameworkCore;
     using SkiRental.Data;
 
-    public class OrderRepository : Repository<Order>, IOrderRepository
+    public class OrderRepository : SkirentalRepository<Order>, IOrderRepository
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderRepository"/> class.
@@ -14,21 +19,24 @@
             : base(ctx) { }
 
         /// <inheritdoc/>
-        public void Add()
+        public void ChangePayment(int id, string paymentMethod)
         {
-            throw new NotImplementedException();
-        }
+            var order = this.GetOne(id);
 
-        /// <inheritdoc/>
-        public void Delete()
-        {
-            throw new NotImplementedException();
+            if (order == null)
+            {
+                throw new InvalidOperationException("not found");
+            }
+
+            order.Payment = paymentMethod;
+
+            this.ctx.SaveChanges();
         }
 
         /// <inheritdoc/>
         public override Order GetOne(int id)
         {
-            throw new NotImplementedException();
+            return GetAll().SingleOrDefault(x => x.OrderId == id);
         }
     }
 }

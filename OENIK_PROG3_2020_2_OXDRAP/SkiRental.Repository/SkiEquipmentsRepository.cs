@@ -1,29 +1,42 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using SkiRental.Data;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿// <copyright file="SkiEquipmentsRepository.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SkiRental.Repository
 {
-    public class SkiEquipmentsRepository : Repository<SkiEquipments>, ISkiEquipmentsRepository
+    using System;
+    using System.Linq;
+    using Microsoft.EntityFrameworkCore;
+    using SkiRental.Data;
+
+    public class SkiEquipmentsRepository : SkirentalRepository<SkiEquipments>, ISkiEquipmentsRepository
     {
-        public SkiEquipmentsRepository(DbContext ctx) : base(ctx) { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SkiEquipmentsRepository"/> class.
+        /// </summary>
+        /// <param name="ctx"></param>
+        public SkiEquipmentsRepository(DbContext ctx)
+            : base(ctx) { }
 
-        public void Add()
+        /// <inheritdoc/>
+        public void ChangePrice(int id, int newPrice)
         {
-            throw new NotImplementedException();
+            var equipment = this.GetOne(id);
+
+            if (equipment == null)
+            {
+                throw new InvalidOperationException("not found");
+            }
+
+            equipment.Price = newPrice;
+
+            this.ctx.SaveChanges();
         }
 
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <inheritdoc/>
         public override SkiEquipments GetOne(int id)
         {
-            throw new NotImplementedException();
+            return GetAll().SingleOrDefault(x => x.SkiEquipmentsId == id);
         }
     }
 }

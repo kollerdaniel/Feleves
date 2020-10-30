@@ -5,35 +5,38 @@
 namespace SkiRental.Repository
 {
     using System;
+    using System.Linq;
     using Microsoft.EntityFrameworkCore;
     using SkiRental.Data;
 
-    public class CustomerRepository : Repository<Customer>, ICustomerRepository
+    public class CustomerRepository : SkirentalRepository<Customer>, ICustomerRepository
     {
-        public CustomerRepository(DbContext ctx) : base(ctx) { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomerRepository"/> class.
+        /// </summary>
+        /// <param name="ctx"></param>
+        public CustomerRepository(DbContext ctx)
+            : base(ctx) { }
 
         /// <inheritdoc/>
-        public void Add()
+        public void ChangePassword(int id, string newPassword)
         {
-            throw new NotImplementedException();
-        }
+            var customer = this.GetOne(id);
 
-        /// <inheritdoc/>
-        public void Delete()
-        {
-            throw new NotImplementedException();
+            if (customer == null)
+            {
+                throw new InvalidOperationException("not found");
+            }
+
+            customer.Password = newPassword;
+
+            this.ctx.SaveChanges();
         }
 
         /// <inheritdoc/>
         public override Customer GetOne(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        /// <inheritdoc/>
-        public void Update()
-        {
-            throw new NotImplementedException();
+            return GetAll().SingleOrDefault(x => x.CustomerId == id);
         }
     }
 }
