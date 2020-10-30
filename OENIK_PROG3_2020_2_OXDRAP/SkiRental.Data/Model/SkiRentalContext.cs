@@ -1,27 +1,36 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SkiRental.Data;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SkiRental.Data
+﻿namespace SkiRental.Data
 {
+    using System;
+    using Microsoft.EntityFrameworkCore;
+
     public class SkiRentalContext : DbContext
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SkiRentalContext"/> class.
+        /// </summary>
         public SkiRentalContext()
         {
             this.Database.EnsureCreated();
         }
 
-        public SkiRentalContext(DbContextOptions<SkiRentalContext> options) : base(options)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SkiRentalContext"/> class.
+        /// </summary>
+        /// <param name="options"></param>
+        public SkiRentalContext(DbContextOptions<SkiRentalContext> options)
+            : base(options)
         {
         }
 
         public virtual DbSet<Customer> Customers { get; set; }
+
         public virtual DbSet<Order> Orders { get; set; }
+
         public virtual DbSet<SkiEquipments> SkiEquipments { get; set; }
+
         public virtual DbSet<Basket> Basket { get; set; }
 
+        /// <inheritdoc/>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -30,6 +39,7 @@ namespace SkiRental.Data
             }
         }
 
+        /// <inheritdoc/>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             Customer c0 = new Customer() { CustomerId = 0, FirstName = "Louie", LastName = "Rogers", Password = "Louirog123", Birthdate = new DateTime(1988, 02, 17), Difficulty = "advanced", Email = "louierogers@gmail.com", Postcode = 12842, Size = 170 };
@@ -63,7 +73,6 @@ namespace SkiRental.Data
             SkiEquipments s12 = new SkiEquipments() { SkiEquipmentsId = 6, Name = "Redster", Manufacturer = "Atomic", Difficulty = "beginner", Price = 100, Size = 180, Status = false };
             SkiEquipments s13 = new SkiEquipments() { SkiEquipmentsId = 7, Name = "Redster", Manufacturer = "Atomic", Difficulty = "beginner", Price = 100, Size = 190, Status = true };
 
-
             SkiEquipments s20 = new SkiEquipments() { SkiEquipmentsId = 8, Name = "React R4", Manufacturer = "Rossignol", Difficulty = "advanced", Price = 250, Size = 160, Status = true };
             SkiEquipments s21 = new SkiEquipments() { SkiEquipmentsId = 9, Name = "React R4", Manufacturer = "Rossignol", Difficulty = "advanced", Price = 250, Size = 170, Status = false };
             SkiEquipments s22 = new SkiEquipments() { SkiEquipmentsId = 10, Name = "React R4", Manufacturer = "Rossignol", Difficulty = "advanced", Price = 250, Size = 180, Status = false };
@@ -91,14 +100,14 @@ namespace SkiRental.Data
             Basket b8 = new Basket() { BasketId = 8, OrderId = 1, SkiEquipmentsId = 0 };
             Basket b9 = new Basket() { BasketId = 9, OrderId = 3, SkiEquipmentsId = 5 };
 
-            modelBuilder.Entity<Customer>(entity =>
-            {
-                entity.HasMany(c => c.Orders)
-                .WithOne(o => o.Customer)
-                .HasForeignKey(c => c.CustomerId)
-                .OnDelete(DeleteBehavior.Cascade);
+            _ = modelBuilder.Entity<Customer>(entity =>
+              {
+                  entity.HasMany(c => c.Orders)
+                  .WithOne(o => o.Customer)
+                  .HasForeignKey(c => c.CustomerId)
+                  .OnDelete(DeleteBehavior.Cascade);
 
-            });
+              });
 
             modelBuilder.Entity<Basket>(entity =>
             {
