@@ -7,6 +7,7 @@ namespace SkiRental.Program
         static void Main(string[] args)
         {
             Factory f = new Factory();
+            f.Start();
         }
     }
 }
