@@ -23,7 +23,7 @@ namespace SkiRental.Program
 
         private static ShopLogic shopLogic = new ShopLogic(orderRepo, equipmentRepo);
 
-        public Factory()
+        public void Start()
         {
             var menu = new ConsoleMenu()
                 .Add(">> LIST ALL Customers", () => ListAllC(customerLogic))
@@ -36,17 +36,17 @@ namespace SkiRental.Program
 
         private static void ListAllC(CustomerLogic customerLogic)
         {
-            Console.WriteLine("\n:: ALL BLOGS ::\n");
+            Console.WriteLine("\n:: ALL Customers ::\n");
             customerLogic.GetAllCustomers()
                 .ToList()
                 .ForEach(x => Console.WriteLine(x.ToString()));
-
+            ;
             Console.ReadLine();
         }
 
         private static void ListAllO(ShopLogic shopL)
         {
-            Console.WriteLine("\n:: ALL BLOGS ::\n");
+            Console.WriteLine("\n:: ALL Orders ::\n");
             shopL.GetAllOrders()
                 .ToList()
                 .ForEach(x => Console.WriteLine(x.ToString()));
@@ -56,7 +56,7 @@ namespace SkiRental.Program
 
         private static void ListAllS(ShopLogic shopL)
         {
-            Console.WriteLine("\n:: ALL BLOGS ::\n");
+            Console.WriteLine("\n:: ALL Equipments ::\n");
             shopL.GetAllSkiEquipments()
                 .ToList()
                 .ForEach(x => Console.WriteLine(x.ToString()));
