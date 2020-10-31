@@ -25,14 +25,14 @@ namespace SkiRental.Data
         /// <summary>
         /// Gets or sets the first name of the customers.
         /// </summary>
-        [MaxLength(20)]
+        [MaxLength(100)]
         [Required]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Gets or sets the last name of the customers.
         /// </summary>
-        [MaxLength(20)]
+        [MaxLength(100)]
         [Required]
         public string LastName { get; set; }
 
@@ -45,14 +45,14 @@ namespace SkiRental.Data
         /// <summary>
         /// Gets or sets the password of the customers.
         /// </summary>
-        [MaxLength(20)]
+        [MaxLength(100)]
         [Required]
         public string Password { get; set; }
 
         /// <summary>
         /// Gets or sets the difficulty of the customers.
         /// </summary>
-        [MaxLength(20)]
+        [MaxLength(100)]
         [Required]
         public string Difficulty { get; set; }
 
@@ -71,7 +71,7 @@ namespace SkiRental.Data
         /// <summary>
         /// Gets or sets the email of the customers.
         /// </summary>
-        [MaxLength(20)]
+        [MaxLength(100)]
         [Required]
         public string Email { get; set; }
 

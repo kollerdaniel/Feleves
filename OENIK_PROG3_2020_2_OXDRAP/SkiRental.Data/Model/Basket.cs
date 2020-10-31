@@ -6,28 +6,31 @@ using System.Text;
 
 namespace SkiRental.Data
 {
-    [Table("Basket")]
-    public class Basket
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int BasketId { get; set; }
+    //[Table("Basket")]
+    //public class Basket
+    //{
+    //    [Key]
+    //    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    //    public int Id { get; set; }
 
-        public virtual Order Order { get; set; }
-        [ForeignKey(nameof(Order))]
-        public int OrderId { get; set; }
+    //    [NotMapped]
+    //    public virtual Order Order { get; set; }
 
-        public virtual SkiEquipments SkiEquipments { get; set; }
-        [ForeignKey(nameof(SkiEquipments))]
-        public int SkiEquipmentsId { get; set; }
+    //    [ForeignKey(nameof(Order))]
+    //    public int OrderId { get; set; }
 
+    //    [NotMapped]
+    //    public virtual SkiEquipments SkiEquipments { get; set; }
 
-        [NotMapped]
-        public virtual ICollection<SkiEquipments> SkiEquipment { get; set; }
+    //    [ForeignKey(nameof(SkiEquipments))]
+    //    public int SkiEquipmentsId { get; set; }
 
-        public Basket()
-        {
-            SkiEquipment = new HashSet<SkiEquipments>();
-        }
-    }
+    //    [NotMapped]
+    //    public virtual ICollection<SkiEquipments> SkiEquipment { get; set; }
+
+    //    public Basket()
+    //    {
+    //        SkiEquipment = new HashSet<SkiEquipments>();
+    //    }
+    //}
 }

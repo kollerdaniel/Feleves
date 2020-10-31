@@ -5,6 +5,8 @@
 namespace SkiRental.Data
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -24,6 +26,7 @@ namespace SkiRental.Data
         /// <summary>
         /// Gets or sets the customer.
         /// </summary>
+        [NotMapped]
         public virtual Customer Customer { get; set; }
 
         /// <summary>
@@ -35,13 +38,14 @@ namespace SkiRental.Data
         /// <summary>
         /// Gets or sets the basket.
         /// </summary>
-        public virtual Basket Basket { get; set; }
+        //[NotMapped]
+        //public virtual Basket Basket { get; set; }
 
-        /// <summary>
-        /// Gets or sets the id of the basket, and this is a foreign key.
-        /// </summary>
-        [ForeignKey(nameof(Basket))]
-        public int BasketId { get; set; }
+        ///// <summary>
+        ///// Gets or sets the id of the basket, and this is a foreign key.
+        ///// </summary>
+        //[ForeignKey(nameof(Basket))]
+        //public int BasketId { get; set; }
 
         /// <summary>
         /// Gets or sets the first date of the orders.
@@ -58,7 +62,7 @@ namespace SkiRental.Data
         /// <summary>
         /// Gets or sets the payment mode of the orders.
         /// </summary>
-        [MaxLength(20)]
+        [MaxLength(100)]
         [Required]
         public string Payment { get; set; }
 
@@ -71,12 +75,16 @@ namespace SkiRental.Data
         /// <summary>
         /// Gets or sets the quantity of promotion of the orders.
         /// </summary>
-        [Required]
         public int? Promotion { get; set; }
 
         public override string ToString()
         {
             return ($"{this.Payment}");
+        }
+        public virtual ICollection<SkiEquipments> SkiEquipments { get; set; }
+        public Order()
+        {
+            this.SkiEquipments = new HashSet<SkiEquipments>();
         }
     }
 }
