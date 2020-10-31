@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SkiRental.Repository</name>
+    </assembly>
+    <members>
+        <member name="M:SkiRental.Repository.CustomerRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.Repository.CustomerRepository"/> class.
+            </summary>
+            <param name="ctx"></param>
+        </member>
+        <member name="M:SkiRental.Repository.CustomerRepository.ChangePassword(System.Int32,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Repository.CustomerRepository.GetOne(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Repository.OrderRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.Repository.OrderRepository"/> class.
+            </summary>
+            <param name="ctx"></param>
+        </member>
+        <member name="M:SkiRental.Repository.OrderRepository.ChangePayment(System.Int32,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Repository.OrderRepository.GetOne(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Repository.SkiEquipmentsRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.Repository.SkiEquipmentsRepository"/> class.
+            </summary>
+            <param name="ctx"></param>
+        </member>
+        <member name="M:SkiRental.Repository.SkiEquipmentsRepository.ChangePrice(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Repository.SkiEquipmentsRepository.GetOne(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Repository.SkirentalRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.Repository.SkirentalRepository`1"/> class.
+            </summary>
+            <param name="ctx"></param>
+        </member>
+        <member name="M:SkiRental.Repository.SkirentalRepository`1.GetAll">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Repository.SkirentalRepository`1.GetOne(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Repository.SkirentalRepository`1.Insert(`0)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

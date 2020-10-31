@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SkiRental.Data</name>
+    </assembly>
+    <members>
+        <member name="T:SkiRental.Data.Customer">
+            <summary>
+            This is the table of the customers.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Customer.CustomerId">
+            <summary>
+            Gets or sets the id of the customers, and this is the primary key of the table.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Customer.FirstName">
+            <summary>
+            Gets or sets the first name of the customers.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Customer.LastName">
+            <summary>
+            Gets or sets the last name of the customers.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Customer.Name">
+            <summary>
+            Gets the full name of the customers.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Customer.Password">
+            <summary>
+            Gets or sets the password of the customers.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Customer.Difficulty">
+            <summary>
+            Gets or sets the difficulty of the customers.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Customer.Size">
+            <summary>
+            Gets or sets the size of the customers.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Customer.Birthdate">
+            <summary>
+            Gets or sets the birthdate of the customers.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Customer.Email">
+            <summary>
+            Gets or sets the email of the customers.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Customer.Postcode">
+            <summary>
+            Gets or sets the postcode of the customers.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Data.Customer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.Data.Customer"/> class.
+            </summary>
+        </member>
+        <member name="T:SkiRental.Data.Order">
+            <summary>
+            This is the table of the orders.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Order.OrderId">
+            <summary>
+            Gets or sets the id of the orders, and this is the primary key.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Order.Customer">
+            <summary>
+            Gets or sets the customer.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Order.CustomerId">
+            <summary>
+            Gets or sets the id of the customer, and this is a foreign key.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Order.FirstDate">
+            <summary>
+            Gets or sets the first date of the orders.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Order.LastDate">
+            <summary>
+            Gets or sets the last date of the orders.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Order.Payment">
+            <summary>
+            Gets or sets the payment mode of the orders.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Order.CustomerPaid">
+            <summary>
+            Gets or sets a value indicating whether the payment status of the orders.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.Order.Promotion">
+            <summary>
+            Gets or sets the quantity of promotion of the orders.
+            </summary>
+        </member>
+        <member name="T:SkiRental.Data.SkiEquipments">
+            <summary>
+            This is the table of the ski equipments.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.SkiEquipments.SkiEquipmentsId">
+            <summary>
+            Gets or sets the id of the equipments, and this is the primary key.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.SkiEquipments.OrderId">
+            <summary>
+            Gets or sets the basket id of the equipments, and it is a foreign key.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.SkiEquipments.Name">
+            <summary>
+            Gets or sets the name of the equipments.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.SkiEquipments.Manufacturer">
+            <summary>
+            Gets or sets the manufacturer of the equipments.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.SkiEquipments.Price">
+            <summary>
+            Gets or sets the price of the equipments.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.SkiEquipments.Size">
+            <summary>
+            Gets or sets the size of the equipments.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.SkiEquipments.Difficulty">
+            <summary>
+            Gets or sets the difficulty of the equipments.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.SkiEquipments.Status">
+            <summary>
+            Gets or sets a value indicating whether it is available or isn't.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Data.SkiEquipments.ToString">
+            <summary>
+            Gets or sets the basket of the equipments.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Data.SkiRentalContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.Data.SkiRentalContext"/> class.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Data.SkiRentalContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{SkiRental.Data.SkiRentalContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.Data.SkiRentalContext"/> class.
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:SkiRental.Data.SkiRentalContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Data.SkiRentalContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
