@@ -20,23 +20,26 @@ namespace SkiRental.Data
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SkiEquipmentsId { get; set; }
 
+        [NotMapped]
+        public virtual Order Order { get; set; }
         /// <summary>
         /// Gets or sets the basket id of the equipments, and it is a foreign key.
         /// </summary>
-        [ForeignKey(nameof(Basket))]
-        public int BasketId { get; set; }
+        [ForeignKey(nameof(Order))]
+        //[NotMapped]
+        public virtual int OrderId { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the equipments.
         /// </summary>
-        [MaxLength(20)]
+        [MaxLength(100)]
         [Required]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the manufacturer of the equipments.
         /// </summary>
-        [MaxLength(20)]
+        [MaxLength(100)]
         [Required]
         public string Manufacturer { get; set; }
 
@@ -55,7 +58,7 @@ namespace SkiRental.Data
         /// <summary>
         /// Gets or sets the difficulty of the equipments.
         /// </summary>
-        [MaxLength(20)]
+        [MaxLength(100)]
         [Required]
         public string Difficulty { get; set; }
 
@@ -68,7 +71,8 @@ namespace SkiRental.Data
         /// <summary>
         /// Gets or sets the basket of the equipments.
         /// </summary>
-        public virtual Basket Basket { get; set; }
+        //[NotMapped]
+        //public virtual Basket Basket { get; set; }
 
         public override string ToString()
         {

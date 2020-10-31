@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>SkiRental.Data.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="SkiRentalDatabase.mdf" />
     <None Remove="SkiRentalDatabase_log.ldf" />
