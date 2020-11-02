@@ -1,15 +1,11 @@
-﻿using ConsoleTools;
-using SkiRental.Data;
-using SkiRental.Logic;
-using SkiRental.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SkiRental.Program
+﻿namespace SkiRental.Program
 {
-    class Factory
+    using ConsoleTools;
+    using SkiRental.Data;
+    using SkiRental.Logic;
+    using SkiRental.Repository;
+
+    public class Factory
     {
         private static SkiRentalContext ctx = new SkiRentalContext();
 
@@ -26,42 +22,24 @@ namespace SkiRental.Program
         public void Start()
         {
             var menu = new ConsoleMenu()
-                .Add(">> LIST ALL Customers", () => ListAllC(customerLogic))
-                .Add(">> LIST ALL Orders", () => ListAllO(shopLogic))
-                .Add(">> LIST ALL Equipments", () => ListAllS(shopLogic))
+
+                .Add(">> LIST ALL ...", () => new ConsoleMenu()
+                .Add("LIST ALL Customers", () => MenuMethods.ListAllC(customerLogic))
+                .Add(">> LIST ALL Orders", () => MenuMethods.ListAllO(shopLogic))
+                .Add(">> LIST ALL Equipments", () => MenuMethods.ListAllS(shopLogic))
+                .Add("Back", ConsoleMenu.Close).Show())
+                .Add("One of them ...", () => new ConsoleMenu()
+                .Add("Customer", () => MenuMethods.GetOneCustomer(customerLogic))
+                .Add("Back", ConsoleMenu.Close).Show())
+                .Add("UPDATE ...", () => new ConsoleMenu()
+                .Add("Ez még nincs kész, vissza", ConsoleMenu.Close).Show())
+                .Add("CREATE ...", () => new ConsoleMenu()
+                .Add("Ez még nincs kész, vissza", ConsoleMenu.Close).Show())
+                .Add("DELETE ...", () => new ConsoleMenu()
+                .Add("Ez még nincs kész, vissza", ConsoleMenu.Close).Show())
                 .Add(">> EXIT", ConsoleMenu.Close);
 
             menu.Show();
-        }
-
-        private static void ListAllC(CustomerLogic customerLogic)
-        {
-            Console.WriteLine("\n:: ALL Customers ::\n");
-            customerLogic.GetAllCustomers()
-                .ToList()
-                .ForEach(x => Console.WriteLine(x.ToString()));
-            ;
-            Console.ReadLine();
-        }
-
-        private static void ListAllO(ShopLogic shopL)
-        {
-            Console.WriteLine("\n:: ALL Orders ::\n");
-            shopL.GetAllOrders()
-                .ToList()
-                .ForEach(x => Console.WriteLine(x.ToString()));
-
-            Console.ReadLine();
-        }
-
-        private static void ListAllS(ShopLogic shopL)
-        {
-            Console.WriteLine("\n:: ALL Equipments ::\n");
-            shopL.GetAllSkiEquipments()
-                .ToList()
-                .ForEach(x => Console.WriteLine(x.ToString()));
-
-            Console.ReadLine();
         }
     }
 }
