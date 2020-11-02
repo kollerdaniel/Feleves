@@ -109,6 +109,11 @@
             Gets or sets the quantity of promotion of the orders.
             </summary>
         </member>
+        <member name="M:SkiRental.Data.Order.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.Data.Order"/> class.
+            </summary>
+        </member>
         <member name="T:SkiRental.Data.SkiEquipments">
             <summary>
             This is the table of the ski equipments.
@@ -117,6 +122,11 @@
         <member name="P:SkiRental.Data.SkiEquipments.SkiEquipmentsId">
             <summary>
             Gets or sets the id of the equipments, and this is the primary key.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.SkiEquipments.Order">
+            <summary>
+            Gets or sets a virtual property for the Order objects.
             </summary>
         </member>
         <member name="P:SkiRental.Data.SkiEquipments.OrderId">
@@ -155,9 +165,7 @@
             </summary>
         </member>
         <member name="M:SkiRental.Data.SkiEquipments.ToString">
-            <summary>
-            Gets or sets the basket of the equipments.
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="M:SkiRental.Data.SkiRentalContext.#ctor">
             <summary>

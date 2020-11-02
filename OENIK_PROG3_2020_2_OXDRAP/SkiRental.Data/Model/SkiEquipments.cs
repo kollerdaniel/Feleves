@@ -20,13 +20,17 @@ namespace SkiRental.Data
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SkiEquipmentsId { get; set; }
 
+        /// <summary>
+        /// Gets or sets a virtual property for the Order objects.
+        /// </summary>
         [NotMapped]
         public virtual Order Order { get; set; }
+
         /// <summary>
         /// Gets or sets the basket id of the equipments, and it is a foreign key.
         /// </summary>
         [ForeignKey(nameof(Order))]
-        //[NotMapped]
+
         public virtual int OrderId { get; set; }
 
         /// <summary>
@@ -68,12 +72,7 @@ namespace SkiRental.Data
         [Required]
         public bool Status { get; set; }
 
-        /// <summary>
-        /// Gets or sets the basket of the equipments.
-        /// </summary>
-        //[NotMapped]
-        //public virtual Basket Basket { get; set; }
-
+        /// <inheritdoc/>
         public override string ToString()
         {
             return $"{this.Name}, {this.Manufacturer}";
