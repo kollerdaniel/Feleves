@@ -1,4 +1,4 @@
-﻿// <copyright file="Repository.cs" company="PlaceholderCompany">
+﻿// <copyright file="SkirentalRepository.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
