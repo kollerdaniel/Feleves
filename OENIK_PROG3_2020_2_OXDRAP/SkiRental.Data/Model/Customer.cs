@@ -94,7 +94,7 @@ namespace SkiRental.Data
 
         public override string ToString()
         {
-            return ($"{this.Name}, {this.Password}, {this.Difficulty}");
+            return $"{this.Name}, {this.Password}, {this.Difficulty}";
         }
     }
 }
