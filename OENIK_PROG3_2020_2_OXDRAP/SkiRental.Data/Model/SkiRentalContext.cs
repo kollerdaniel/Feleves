@@ -62,10 +62,6 @@
 
             modelBuilder.Entity<Order>(entity =>
             {
-                //entity.HasOne(o => o.Basket)
-                //.WithOne(b => b.Order)
-                //.HasForeignKey<Order>(o => o.BasketId);
-
                 entity.HasOne(o => o.Customer)
                 .WithMany(c => c.Orders)
                 .HasForeignKey(o => o.CustomerId);
@@ -138,59 +134,6 @@
             s23.OrderId = o8.OrderId;
             s00.OrderId = o1.OrderId;
             s11.OrderId = o3.OrderId;
-
-            //Basket b0 = new Basket() { Id = 1, OrderId = o4.OrderId, SkiEquipmentsId = s21.SkiEquipmentsId };
-            //Basket b1 = new Basket() { Id = 2, OrderId = o7.OrderId, SkiEquipmentsId = s11.SkiEquipmentsId };
-            //Basket b2 = new Basket() { Id = 3, OrderId = o5.OrderId, SkiEquipmentsId = s20.SkiEquipmentsId };
-            //Basket b3 = new Basket() { Id = 4, OrderId = o0.OrderId, SkiEquipmentsId = s03.SkiEquipmentsId };
-            //Basket b4 = new Basket() { Id = 5, OrderId = o9.OrderId, SkiEquipmentsId = s03.SkiEquipmentsId };
-            //Basket b5 = new Basket() { Id = 6, OrderId = o6.OrderId, SkiEquipmentsId = s11.SkiEquipmentsId };
-            //Basket b6 = new Basket() { Id = 7, OrderId = o2.OrderId, SkiEquipmentsId = s02.SkiEquipmentsId };
-            //Basket b7 = new Basket() { Id = 8, OrderId = o8.OrderId, SkiEquipmentsId = s23.SkiEquipmentsId };
-            //Basket b8 = new Basket() { Id = 9, OrderId = o1.OrderId, SkiEquipmentsId = s00.SkiEquipmentsId };
-            //Basket b9 = new Basket() { Id = 10, OrderId = o3.OrderId, SkiEquipmentsId = s11.SkiEquipmentsId };
-
-            //modelBuilder.Entity<Basket>().HasData(b0, b1, b2, b3, b4, b5, b6, b7, b8, b9);
-
-            //s21.BasketId = b0.BasketId;
-            //s11.BasketId = b1.BasketId;
-            //s20.BasketId = b2.BasketId;
-            //s03.BasketId = b3.BasketId;
-            //s03.BasketId = b4.BasketId;
-            //s11.BasketId = b5.BasketId;
-            //s02.BasketId = b6.BasketId;
-            //s23.BasketId = b7.BasketId;
-            //s00.BasketId = b8.BasketId;
-            //s11.BasketId = b9.BasketId;
-
-            //o4.BasketId = b0.BasketId;
-            //o7.BasketId = b1.BasketId;
-            //o5.BasketId = b2.BasketId;
-            //o0.BasketId = b3.BasketId;
-            //o9.BasketId = b4.BasketId;
-            //o6.BasketId = b5.BasketId;
-            //o2.BasketId = b6.BasketId;
-            //o8.BasketId = b7.BasketId;
-            //o1.BasketId = b8.BasketId;
-            //o3.BasketId = b9.BasketId;
-
-            
-
-            //modelBuilder.Entity<Basket>(entity =>
-            //{
-            //    entity.HasOne(b => b.SkiEquipments)
-            //    .WithOne(s => s.Basket)
-            //    .HasForeignKey<Basket>(b => b.Id)
-            //    .OnDelete(DeleteBehavior.Cascade);
-
-            //});
-
-            
-
-            
-
-            
-            ;
         }
     }
 }
