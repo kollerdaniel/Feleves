@@ -36,18 +36,6 @@ namespace SkiRental.Data
         public int CustomerId { get; set; }
 
         /// <summary>
-        /// Gets or sets the basket.
-        /// </summary>
-        //[NotMapped]
-        //public virtual Basket Basket { get; set; }
-
-        ///// <summary>
-        ///// Gets or sets the id of the basket, and this is a foreign key.
-        ///// </summary>
-        //[ForeignKey(nameof(Basket))]
-        //public int BasketId { get; set; }
-
-        /// <summary>
         /// Gets or sets the first date of the orders.
         /// </summary>
         [Required]
@@ -79,9 +67,14 @@ namespace SkiRental.Data
 
         public override string ToString()
         {
-            return ($"{this.Payment}");
+            return $"{this.Payment}";
         }
+
         public virtual ICollection<SkiEquipments> SkiEquipments { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Order"/> class.
+        /// </summary>
         public Order()
         {
             this.SkiEquipments = new HashSet<SkiEquipments>();
