@@ -53,5 +53,48 @@
 
             Console.ReadLine();
         }
+
+        public static void GetOneOrder(ShopLogic shopLogic)
+        {
+            Console.WriteLine("Enter id here: ");
+
+            int id = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\n:: Selected Order ::\n");
+
+            Console.WriteLine(shopLogic.GetOrderById(id).ToString());
+
+            Console.ReadLine();
+        }
+
+        public static void GetOneEquipment(ShopLogic shopLogic)
+        {
+            Console.WriteLine("Enter id here: ");
+
+            int id = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\n:: Selected Equipment ::\n");
+
+            Console.WriteLine(shopLogic.GetSkiEquipmentsById(id).ToString());
+
+            Console.ReadLine();
+        }
+
+        public static void ChangePassword(CustomerLogic customerLogic)
+        {
+            Console.WriteLine("Enter id here: ");
+
+            int id = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter new password here: ");
+
+            string password = Console.ReadLine();
+
+            customerLogic.ChangePassword(id, password);
+
+            Console.WriteLine("Elmentve!!!");
+
+            Console.ReadLine();
+        }
     }
 }
