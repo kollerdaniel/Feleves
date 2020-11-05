@@ -1,5 +1,5 @@
-﻿// <copyright file="IRepository.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// <copyright file="IRepository.cs" company="OXDRAP">
+// Copyright (c) OXDRAP. All rights reserved.
 // </copyright>
 
 namespace SkiRental.Repository

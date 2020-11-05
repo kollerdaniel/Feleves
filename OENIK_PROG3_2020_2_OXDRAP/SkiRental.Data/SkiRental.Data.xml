@@ -69,6 +69,11 @@
             This is the table of the orders.
             </summary>
         </member>
+        <member name="M:SkiRental.Data.Order.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.Data.Order"/> class.
+            </summary>
+        </member>
         <member name="P:SkiRental.Data.Order.OrderId">
             <summary>
             Gets or sets the id of the orders, and this is the primary key.
@@ -107,11 +112,6 @@
         <member name="P:SkiRental.Data.Order.Promotion">
             <summary>
             Gets or sets the quantity of promotion of the orders.
-            </summary>
-        </member>
-        <member name="M:SkiRental.Data.Order.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SkiRental.Data.Order"/> class.
             </summary>
         </member>
         <member name="T:SkiRental.Data.SkiEquipments">
