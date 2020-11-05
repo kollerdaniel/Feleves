@@ -17,6 +17,14 @@ namespace SkiRental.Data
     public class Order
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="Order"/> class.
+        /// </summary>
+        public Order()
+        {
+            this.SkiEquipments = new HashSet<SkiEquipments>();
+        }
+
+        /// <summary>
         /// Gets or sets the id of the orders, and this is the primary key.
         /// </summary>
         [Key]
@@ -71,13 +79,5 @@ namespace SkiRental.Data
         }
 
         public virtual ICollection<SkiEquipments> SkiEquipments { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Order"/> class.
-        /// </summary>
-        public Order()
-        {
-            this.SkiEquipments = new HashSet<SkiEquipments>();
-        }
     }
 }
