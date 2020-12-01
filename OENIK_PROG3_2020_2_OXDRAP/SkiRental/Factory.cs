@@ -51,6 +51,7 @@ namespace SkiRental.Program
                 .Add("CREATE ...", () => new ConsoleMenu()
                 .Add("Create Customer", () => MenuMethods.InsertCustomer(customerLogic))
                 .Add("Create Order", () => MenuMethods.InsterOrder(shopLogic))
+                .Add("Create Equipment", () => MenuMethods.InsterEquipment(shopLogic))
                 .Add("Back", ConsoleMenu.Close).Show())
                 .Add("DELETE ...", () => new ConsoleMenu()
                 .Add("Delete Customer", () => MenuMethods.DeleteCustomer(customerRepo))

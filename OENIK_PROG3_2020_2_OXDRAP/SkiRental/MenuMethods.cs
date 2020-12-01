@@ -375,28 +375,32 @@ namespace SkiRental.Program
         public static void InsertCustomer(CustomerLogic customer)
         {
             customer?.GetAllCustomers().ToList().ForEach(x => Console.WriteLine(x));
-            Console.WriteLine("\nEnter your firstname:");
+            ToConsole("\nEnter your firstname:");
             string firstname = Console.ReadLine();
-            Console.WriteLine("\nEnter your lastname:");
+            ToConsole("\nEnter your lastname:");
             string lastname = Console.ReadLine();
-            Console.WriteLine("\nEnter your password:");
+            ToConsole("\nEnter your password:");
             string password = Console.ReadLine();
-            Console.WriteLine("\nEnter your difficulty:");
+            ToConsole("\nEnter your difficulty:");
             string difficulty = Console.ReadLine();
             int size = IntParse("\nEnter your size");
             DateTime birthdate = DateParse("\nEnter your birthdate:");
             int postcode = IntParse("\nEnter your postcode");
-            Console.WriteLine("\nEnter your email:");
+            ToConsole("\nEnter your email:");
             string email = Console.ReadLine();
             customer?.CreateCustomer(new Data.Customer() { FirstName = firstname, LastName = lastname, Password = password, Difficulty = difficulty, Size = size, Birthdate = birthdate, Postcode = postcode, Email = email });
-            Console.WriteLine("\nNew customer succesfully created!");
+            ToConsole("\nNew customer succesfully created!");
             ListAllC(customer);
         }
 
+        /// <summary>
+        /// It asks about order datas.
+        /// </summary>
+        /// <param name="shop">Logic for Orders repository and SkiEqupments repository.</param>
         public static void InsterOrder(ShopLogic shop)
         {
             shop?.GetAllOrders().ToList().ForEach(x => Console.WriteLine(x));
-            Console.WriteLine("\nEnter payment method:");
+            ToConsole("\nEnter payment method:");
             string payment = Console.ReadLine();
             DateTime firstdate = DateParse("\nEnter first date:");
             DateTime lastdate = DateParse("\nEnter last date:");
@@ -405,7 +409,7 @@ namespace SkiRental.Program
             bool valid = false;
             do
             {
-                Console.WriteLine("\nEnter payment status: (y/n)");
+                ToConsole("\nEnter payment status: (y/n)");
                 validS = Console.ReadLine();
             }
             while (validS != "y" & validS != "n");
@@ -413,10 +417,52 @@ namespace SkiRental.Program
             {
                 valid = true;
             }
-            int customerID = IntParse("\nEnter customer ID: ");
+
+            int customerID = IntParse("\nEnter customer's ID: ");
             shop?.CreateOrder(new Data.Order() { CustomerId = customerID, Payment = payment, FirstDate = firstdate, LastDate = lastdate, Promotion = promotion, CustomerPaid = valid });
-            Console.WriteLine("\nNew order successfully created!");
+            ToConsole("\nNew order successfully created!");
             ListAllO(shop);
+        }
+
+        /// <summary>
+        /// It asks about equipment datas.
+        /// </summary>
+        /// <param name="shop">Logic for Orders repository and SkiEqupments repository.</param>
+        public static void InsterEquipment(ShopLogic shop)
+        {
+            shop?.GetAllSkiEquipments().ToList().ForEach(x => Console.WriteLine(x));
+            int orderID = IntParse("\nEnter order's ID: ");
+            ToConsole("\nEnter name:");
+            string name = Console.ReadLine();
+            ToConsole("\nEnter manufacturer:");
+            string manufacturer = Console.ReadLine();
+            ToConsole("\nEnter difficulty:");
+            string difficulty = Console.ReadLine();
+            int price = IntParse("\nEnter price:");
+            int size = IntParse("\nEnter size:");
+            string validS = string.Empty;
+            bool valid = false;
+            do
+            {
+                ToConsole("\nEnter payment status: (y/n)");
+                validS = Console.ReadLine();
+            }
+            while (validS != "y" & validS != "n");
+            if (validS == "y")
+            {
+                valid = true;
+            }
+            shop?.CreateEquipment(new Data.SkiEquipments() { OrderId = orderID, Name = name, Manufacturer = manufacturer, Difficulty = difficulty, Price = price, Size = size, Status = valid });
+        }
+
+        /// <summary>
+        /// I can avoid Console.Writeline with this method.
+        /// </summary>
+        /// <param name="outString">A string.</param>
+        private static void ToConsole(string outString)
+        {
+            string outS = outString;
+            Console.WriteLine(outS.ToString());
         }
 
         /// <summary>
@@ -447,6 +493,10 @@ namespace SkiRental.Program
             return int.Parse(inp, new CultureInfo("en-US"));
         }
 
+        /// <summary>
+        /// It converts the string value into DateTime.
+        /// </summary>
+        /// <returns>An date time.</returns>
         private static DateTime DateParse(string outString)
         {
             bool validDate = false;
