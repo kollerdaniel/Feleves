@@ -44,12 +44,19 @@ namespace SkiRental.Program
                 .Add("Ski equipment", () => MenuMethods.GetOneEquipment(shopLogic))
                 .Add("Back", ConsoleMenu.Close).Show())
                 .Add("UPDATE ...", () => new ConsoleMenu()
-                .Add("Új jelszó megadása", () => MenuMethods.ChangePassword(customerLogic))
-                .Add("Vissza", ConsoleMenu.Close).Show())
+                .Add("Customer => New password", () => MenuMethods.ChangePassword(customerLogic))
+                .Add("Order => New price", () => MenuMethods.ChangePrice(shopLogic))
+                .Add("Order => New payment method", () => MenuMethods.ChangePayment(shopLogic))
+                .Add("Back", ConsoleMenu.Close).Show())
                 .Add("CREATE ...", () => new ConsoleMenu()
-                .Add("Ez még nincs kész, vissza", ConsoleMenu.Close).Show())
+                .Add("Create Customer", () => MenuMethods.InsertCustomer(customerLogic))
+                .Add("Create Order", () => MenuMethods.InsterOrder(shopLogic))
+                .Add("Back", ConsoleMenu.Close).Show())
                 .Add("DELETE ...", () => new ConsoleMenu()
-                .Add("Ez még nincs kész, vissza", ConsoleMenu.Close).Show())
+                .Add("Delete Customer", () => MenuMethods.DeleteCustomer(customerRepo))
+                .Add("Delete Order", () => MenuMethods.DeleteOrder(orderRepo))
+                .Add("Delete Equipment", () => MenuMethods.DeleteEquipment(equipmentRepo))
+                .Add("Back", ConsoleMenu.Close).Show())
                 .Add(">> EXIT", ConsoleMenu.Close);
 
             menu.Show();
