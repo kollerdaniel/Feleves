@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiRental.Program", "SkiRental\SkiRental.Program.csproj", "{E687C190-8659-4B4D-BDF5-8996C7C98003}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiRental.Repository", "SkiRental.Repository\SkiRental.Repository.csproj", "{9D05D1D2-A449-49FD-ACFF-F30EF1F149C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiRental.Repository", "SkiRental.Repository\SkiRental.Repository.csproj", "{9D05D1D2-A449-49FD-ACFF-F30EF1F149C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiRental.Data", "SkiRental.Data\SkiRental.Data.csproj", "{0AD8D551-3A2D-4641-BE31-0614F81B6BE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiRental.Data", "SkiRental.Data\SkiRental.Data.csproj", "{0AD8D551-3A2D-4641-BE31-0614F81B6BE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiRental.Logic", "SkiRental.Logic\SkiRental.Logic.csproj", "{20174677-43D9-4F25-9258-065078BBAC48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiRental.Logic", "SkiRental.Logic\SkiRental.Logic.csproj", "{20174677-43D9-4F25-9258-065078BBAC48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiRental.Logic.Tests", "SkiRental.Logic.Tests\SkiRental.Logic.Tests.csproj", "{81FED368-4B8A-4A6C-B1F0-EB387A321630}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiRental.Logic.Tests", "SkiRental.Logic.Tests\SkiRental.Logic.Tests.csproj", "{81FED368-4B8A-4A6C-B1F0-EB387A321630}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

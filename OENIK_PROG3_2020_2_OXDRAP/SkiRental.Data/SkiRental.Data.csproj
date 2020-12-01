@@ -11,6 +11,11 @@
   <ItemGroup>
     <None Remove="SkiRentalDatabase.mdf" />
     <None Remove="SkiRentalDatabase_log.ldf" />
+    <None Remove="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
