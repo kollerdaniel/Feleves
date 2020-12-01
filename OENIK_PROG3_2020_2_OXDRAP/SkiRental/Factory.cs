@@ -1,11 +1,18 @@
-﻿namespace SkiRental.Program
+﻿// <copyright file="Factory.cs" company="OXDRAP">
+// Copyright (c) OXDRAP. All rights reserved.
+// </copyright>
+
+namespace SkiRental.Program
 {
     using ConsoleTools;
     using SkiRental.Data;
     using SkiRental.Logic;
     using SkiRental.Repository;
 
-    public class Factory
+    /// <summary>
+    /// It instantiates the repositories, the logic classes and the menu.
+    /// </summary>
+    public static class Factory
     {
         private static SkiRentalContext ctx = new SkiRentalContext();
 
@@ -19,7 +26,10 @@
 
         private static ShopLogic shopLogic = new ShopLogic(orderRepo, equipmentRepo);
 
-        public void Start()
+        /// <summary>
+        /// This is a method to handle the menu.
+        /// </summary>
+        public static void Start()
         {
             var menu = new ConsoleMenu()
 
