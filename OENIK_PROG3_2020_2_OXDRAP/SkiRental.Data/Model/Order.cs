@@ -86,7 +86,7 @@ namespace SkiRental.Data
         /// <returns>It returns the ID, payment method, rental dates, promotions and the name of the customer.</returns>
         public override string ToString()
         {
-            return $"ID: {this.CustomerId}, Payment method: {this.Payment}, Rental dates: {this.FirstDate.ToShortDateString()} - {this.LastDate.ToShortDateString()}, Promotions: {this.Promotion}, Name of customer: {this.Customer.Name}";
+            return $"ID: {this.OrderId}, Payment method: {this.Payment}, Rental dates: {this.FirstDate.ToShortDateString()} - {this.LastDate.ToShortDateString()}, Promotions: {this.Promotion}, Name of customer: {this.Customer.Name}";
         }
     }
 }
