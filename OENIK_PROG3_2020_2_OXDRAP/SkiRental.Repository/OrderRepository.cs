@@ -9,14 +9,19 @@ namespace SkiRental.Repository
     using Microsoft.EntityFrameworkCore;
     using SkiRental.Data;
 
+    /// <summary>
+    /// This is the repository of the Orders table.
+    /// </summary>
     public class OrderRepository : SkirentalRepository<Order>, IOrderRepository
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderRepository"/> class.
         /// </summary>
-        /// <param name="ctx"></param>
+        /// <param name="ctx">Context.</param>
         public OrderRepository(DbContext ctx)
-            : base(ctx) { }
+            : base(ctx)
+        {
+        }
 
         /// <inheritdoc/>
         public void ChangePayment(int id, string paymentMethod)
@@ -30,13 +35,21 @@ namespace SkiRental.Repository
 
             order.Payment = paymentMethod;
 
-            this.ctx.SaveChanges();
+            this.Ctx.SaveChanges();
         }
 
         /// <inheritdoc/>
         public override Order GetOne(int id)
         {
-            return GetAll().SingleOrDefault(x => x.OrderId == id);
+            Order o = this.GetAll().SingleOrDefault(x => x.OrderId == id);
+            if (o != null)
+            {
+                return o;
+            }
+            else
+            {
+                throw new ArgumentException("Could not find the record in the set!");
+            }
         }
     }
 }

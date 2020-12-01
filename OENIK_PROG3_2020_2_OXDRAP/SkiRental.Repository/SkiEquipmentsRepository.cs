@@ -1,5 +1,5 @@
-﻿// <copyright file="SkiEquipmentsRepository.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// <copyright file="SkiEquipmentsRepository.cs" company="OXDRAP">
+// Copyright (c) OXDRAP. All rights reserved.
 // </copyright>
 
 namespace SkiRental.Repository
@@ -9,14 +9,19 @@ namespace SkiRental.Repository
     using Microsoft.EntityFrameworkCore;
     using SkiRental.Data;
 
+    /// <summary>
+    /// This is the repository of the ski equipments.
+    /// </summary>
     public class SkiEquipmentsRepository : SkirentalRepository<SkiEquipments>, ISkiEquipmentsRepository
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SkiEquipmentsRepository"/> class.
         /// </summary>
-        /// <param name="ctx"></param>
+        /// <param name="ctx">Context.</param>
         public SkiEquipmentsRepository(DbContext ctx)
-            : base(ctx) { }
+            : base(ctx)
+        {
+        }
 
         /// <inheritdoc/>
         public void ChangePrice(int id, int newPrice)
@@ -30,13 +35,22 @@ namespace SkiRental.Repository
 
             equipment.Price = newPrice;
 
-            this.ctx.SaveChanges();
+            this.Ctx.SaveChanges();
         }
 
         /// <inheritdoc/>
         public override SkiEquipments GetOne(int id)
         {
-            return GetAll().SingleOrDefault(x => x.SkiEquipmentsId == id);
+            SkiEquipments s = this.GetAll().SingleOrDefault(x => x.SkiEquipmentsId == id);
+
+            if (s != null)
+            {
+                return s;
+            }
+            else
+            {
+                throw new ArgumentException("Could not find the record in the set!");
+            }
         }
     }
 }
