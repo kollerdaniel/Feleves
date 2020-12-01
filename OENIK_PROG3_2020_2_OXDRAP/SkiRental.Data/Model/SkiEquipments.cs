@@ -1,5 +1,5 @@
-﻿// <copyright file="SkiEquipments.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// <copyright file="SkiEquipments.cs" company="OXDRAP">
+// Copyright (c) OXDRAP. All rights reserved.
 // </copyright>
 
 namespace SkiRental.Data
@@ -72,10 +72,13 @@ namespace SkiRental.Data
         [Required]
         public bool Status { get; set; }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// This is the overrided ToString method of Ski equipments.
+        /// </summary>
+        /// <returns>It returns the name, the manufacturer, the price, the size, the difficulty and the status of the ski.</returns>
         public override string ToString()
         {
-            return $"{this.Name}, {this.Manufacturer}";
+            return $"ID: {this.SkiEquipmentsId}, name: {this.Name}, manufacturer: {this.Manufacturer}, price: {this.Price}, size: {this.Size}, difficulty: {this.Difficulty}, status: {this.Status}";
         }
     }
 }

@@ -9,6 +9,11 @@
             This is the table of the customers.
             </summary>
         </member>
+        <member name="M:SkiRental.Data.Customer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.Data.Customer"/> class.
+            </summary>
+        </member>
         <member name="P:SkiRental.Data.Customer.CustomerId">
             <summary>
             Gets or sets the id of the customers, and this is the primary key of the table.
@@ -59,10 +64,17 @@
             Gets or sets the postcode of the customers.
             </summary>
         </member>
-        <member name="M:SkiRental.Data.Customer.#ctor">
+        <member name="P:SkiRental.Data.Customer.Orders">
             <summary>
-            Initializes a new instance of the <see cref="T:SkiRental.Data.Customer"/> class.
+            Gets or sets the orders.
+            This is a navigation property.
             </summary>
+        </member>
+        <member name="M:SkiRental.Data.Customer.ToString">
+            <summary>
+            This is the overrided ToString method of Customer.
+            </summary>
+            <returns>It returns the name, password, difficulty, size, birthdate, postcode and email of the customer.</returns>
         </member>
         <member name="T:SkiRental.Data.Order">
             <summary>
@@ -113,6 +125,18 @@
             <summary>
             Gets or sets the quantity of promotion of the orders.
             </summary>
+        </member>
+        <member name="P:SkiRental.Data.Order.SkiEquipments">
+            <summary>
+            Gets the ski equipments.
+            This is a navigation property.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Data.Order.ToString">
+            <summary>
+            This is the overrided ToString method of Order.
+            </summary>
+            <returns>It returns the ID, payment method, rental dates, promotions and the name of the customer.</returns>
         </member>
         <member name="T:SkiRental.Data.SkiEquipments">
             <summary>
@@ -165,7 +189,15 @@
             </summary>
         </member>
         <member name="M:SkiRental.Data.SkiEquipments.ToString">
-            <inheritdoc/>
+            <summary>
+            This is the overrided ToString method of Ski equipments.
+            </summary>
+            <returns>It returns the name, the manufacturer, the price, the size, the difficulty and the status of the ski.</returns>
+        </member>
+        <member name="T:SkiRental.Data.SkiRentalContext">
+            <summary>
+            This is the Context class of the database.
+            </summary>
         </member>
         <member name="M:SkiRental.Data.SkiRentalContext.#ctor">
             <summary>
@@ -176,13 +208,34 @@
             <summary>
             Initializes a new instance of the <see cref="T:SkiRental.Data.SkiRentalContext"/> class.
             </summary>
-            <param name="options"></param>
+            <param name="options">Options.</param>
+        </member>
+        <member name="P:SkiRental.Data.SkiRentalContext.Customers">
+            <summary>
+            Gets or sets the Customers table.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.SkiRentalContext.Orders">
+            <summary>
+            Gets or sets the Orders table.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Data.SkiRentalContext.SkiEquipments">
+            <summary>
+            Gets or sets the SkiEquipments table.
+            </summary>
         </member>
         <member name="M:SkiRental.Data.SkiRentalContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
-            <inheritdoc/>
+            <summary>
+            Overrideing the original OnConfiguring method.
+            </summary>
+            <param name="optionsBuilder">Sets the connection for the database.</param>
         </member>
         <member name="M:SkiRental.Data.SkiRentalContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc/>
+            <summary>
+            Overriding the original OnModelCreating method. Creating instances and setting connections between the tables.
+            </summary>
+            <param name="modelBuilder">Modelbuilder instance.</param>
         </member>
     </members>
 </doc>

@@ -4,11 +4,16 @@
         <name>SkiRental.Repository</name>
     </assembly>
     <members>
+        <member name="T:SkiRental.Repository.CustomerRepository">
+            <summary>
+            It is the repository of the Customers table.
+            </summary>
+        </member>
         <member name="M:SkiRental.Repository.CustomerRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
             <summary>
             Initializes a new instance of the <see cref="T:SkiRental.Repository.CustomerRepository"/> class.
             </summary>
-            <param name="ctx"></param>
+            <param name="ctx">Context.</param>
         </member>
         <member name="M:SkiRental.Repository.CustomerRepository.ChangePassword(System.Int32,System.String)">
             <inheritdoc/>
@@ -16,11 +21,83 @@
         <member name="M:SkiRental.Repository.CustomerRepository.GetOne(System.Int32)">
             <inheritdoc/>
         </member>
+        <member name="T:SkiRental.Repository.ICustomerRepository">
+            <summary>
+            It is the repository interface of the Customers table.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Repository.ICustomerRepository.ChangePassword(System.Int32,System.String)">
+            <summary>
+            It changes the password of an entity by ID.
+            </summary>
+            <param name="id">ID of the entity.</param>
+            <param name="newPassword">New password.</param>
+        </member>
+        <member name="T:SkiRental.Repository.IOrderRepository">
+            <summary>
+            This is the repository interface of the Orders table.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Repository.IOrderRepository.ChangePayment(System.Int32,System.String)">
+            <summary>
+            It changes the payment method by ID.
+            </summary>
+            <param name="id">ID of the entity.</param>
+            <param name="paymentMethod">The new payment method.</param>
+        </member>
+        <member name="T:SkiRental.Repository.IRepository`1">
+            <summary>
+            This is the main repository inteface.
+            </summary>
+            <typeparam name="T">Generic type.</typeparam>
+        </member>
+        <member name="M:SkiRental.Repository.IRepository`1.GetOne(System.Int32)">
+            <summary>
+            This is the get one method.
+            </summary>
+            <param name="id">ID of the entity.</param>
+            <returns>It returns an entity by ID.</returns>
+        </member>
+        <member name="M:SkiRental.Repository.IRepository`1.GetAll">
+            <summary>
+            This is the get all method.
+            </summary>
+            <returns>It returns a list of the entities.</returns>
+        </member>
+        <member name="M:SkiRental.Repository.IRepository`1.Insert(`0)">
+            <summary>
+            It adds an entity to the database.
+            </summary>
+            <param name="entity">Entity.</param>
+        </member>
+        <member name="M:SkiRental.Repository.IRepository`1.Remove(System.Int32)">
+            <summary>
+            It removes an entity by ID.
+            </summary>
+            <param name="id">ID.</param>
+        </member>
+        <member name="T:SkiRental.Repository.ISkiEquipmentsRepository">
+            <summary>
+            This is the repository interface of the SkiEquipments table.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Repository.ISkiEquipmentsRepository.ChangePrice(System.Int32,System.Int32)">
+            <summary>
+            It changes the price of the entity.
+            </summary>
+            <param name="id">ID of the entity.</param>
+            <param name="newPrice">New price.</param>
+        </member>
+        <member name="T:SkiRental.Repository.OrderRepository">
+            <summary>
+            This is the repository of the Orders table.
+            </summary>
+        </member>
         <member name="M:SkiRental.Repository.OrderRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
             <summary>
             Initializes a new instance of the <see cref="T:SkiRental.Repository.OrderRepository"/> class.
             </summary>
-            <param name="ctx"></param>
+            <param name="ctx">Context.</param>
         </member>
         <member name="M:SkiRental.Repository.OrderRepository.ChangePayment(System.Int32,System.String)">
             <inheritdoc/>
@@ -28,11 +105,16 @@
         <member name="M:SkiRental.Repository.OrderRepository.GetOne(System.Int32)">
             <inheritdoc/>
         </member>
+        <member name="T:SkiRental.Repository.SkiEquipmentsRepository">
+            <summary>
+            This is the repository of the ski equipments.
+            </summary>
+        </member>
         <member name="M:SkiRental.Repository.SkiEquipmentsRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
             <summary>
             Initializes a new instance of the <see cref="T:SkiRental.Repository.SkiEquipmentsRepository"/> class.
             </summary>
-            <param name="ctx"></param>
+            <param name="ctx">Context.</param>
         </member>
         <member name="M:SkiRental.Repository.SkiEquipmentsRepository.ChangePrice(System.Int32,System.Int32)">
             <inheritdoc/>
@@ -40,11 +122,22 @@
         <member name="M:SkiRental.Repository.SkiEquipmentsRepository.GetOne(System.Int32)">
             <inheritdoc/>
         </member>
+        <member name="T:SkiRental.Repository.SkirentalRepository`1">
+            <summary>
+            This is the main repository.
+            </summary>
+            <typeparam name="T">Generic type.</typeparam>
+        </member>
         <member name="M:SkiRental.Repository.SkirentalRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
             <summary>
             Initializes a new instance of the <see cref="T:SkiRental.Repository.SkirentalRepository`1"/> class.
             </summary>
-            <param name="ctx"></param>
+            <param name="ctx">Context.</param>
+        </member>
+        <member name="P:SkiRental.Repository.SkirentalRepository`1.Ctx">
+            <summary>
+            Gets or sets the context.
+            </summary>
         </member>
         <member name="M:SkiRental.Repository.SkirentalRepository`1.GetAll">
             <inheritdoc/>
@@ -53,6 +146,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SkiRental.Repository.SkirentalRepository`1.Insert(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Repository.SkirentalRepository`1.Remove(System.Int32)">
             <inheritdoc/>
         </member>
     </members>

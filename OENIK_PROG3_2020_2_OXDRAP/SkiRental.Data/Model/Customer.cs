@@ -1,5 +1,5 @@
-﻿// <copyright file="Customer.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// <copyright file="Customer.cs" company="OXDRAP">
+// Copyright (c) OXDRAP. All rights reserved.
 // </copyright>
 
 namespace SkiRental.Data
@@ -15,6 +15,14 @@ namespace SkiRental.Data
     [Table("Customers")]
     public class Customer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Customer"/> class.
+        /// </summary>
+        public Customer()
+        {
+            this.Orders = new HashSet<Order>();
+        }
+
         /// <summary>
         /// Gets or sets the id of the customers, and this is the primary key of the table.
         /// </summary>
@@ -81,20 +89,20 @@ namespace SkiRental.Data
         [Required]
         public int Postcode { get; set; }
 
+        /// <summary>
+        /// Gets or sets the orders.
+        /// This is a navigation property.
+        /// </summary>
         [NotMapped]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual IReadOnlyCollection<Order> Orders { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Customer"/> class.
+        /// This is the overrided ToString method of Customer.
         /// </summary>
-        public Customer()
-        {
-            this.Orders = new HashSet<Order>();
-        }
-
+        /// <returns>It returns the name, password, difficulty, size, birthdate, postcode and email of the customer.</returns>
         public override string ToString()
         {
-            return $"{this.Name}, {this.Password}, {this.Difficulty}";
+            return $"Customers name: {this.Name}, password: {this.Password}, difficulty: {this.Difficulty}, size: {this.Size}, birthdate: {this.Birthdate.ToShortDateString()}, postcode: {this.Postcode}, email: {this.Email}";
         }
     }
 }

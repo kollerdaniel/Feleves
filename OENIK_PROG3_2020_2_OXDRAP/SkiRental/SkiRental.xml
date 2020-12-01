@@ -4,5 +4,85 @@
         <name>SkiRental.Program</name>
     </assembly>
     <members>
+        <member name="T:SkiRental.Program.Factory">
+            <summary>
+            It instantiates the repositories, the logic classes and the menu.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Program.Factory.Start">
+            <summary>
+            This is a method to handle the menu.
+            </summary>
+        </member>
+        <member name="T:SkiRental.Program.MainProgram">
+            <summary>
+            This is the main program.
+            </summary>
+        </member>
+        <member name="T:SkiRental.Program.MenuMethods">
+            <summary>
+            This is a class for the methods that menu uses.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.ListAllC(SkiRental.Logic.CustomerLogic)">
+            <summary>
+            This method lists all the customers.
+            </summary>
+            <param name="customerLogic">Logic for Customers repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.ListAllO(SkiRental.Logic.ShopLogic)">
+            <summary>
+            This method lists all the Orders.
+            </summary>
+            <param name="shopL">Logic for Orders repository and SkiEqupments repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.ListAllS(SkiRental.Logic.ShopLogic)">
+            <summary>
+            This method lists all the Ski equipments.
+            </summary>
+            <param name="shopL">Logic for Orders repository and SkiEqupments repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.GetOneCustomer(SkiRental.Logic.CustomerLogic)">
+            <summary>
+            This method lists one of the customers.
+            </summary>
+            <param name="customerLogic">Logic for Customers repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.GetOneOrder(SkiRental.Logic.ShopLogic)">
+            <summary>
+            This method lists one of the Orders.
+            </summary>
+            <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.GetOneEquipment(SkiRental.Logic.ShopLogic)">
+            <summary>
+            This method lists one of the Ski equipments.
+            </summary>
+            <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.ChangePassword(SkiRental.Logic.CustomerLogic)">
+            <summary>
+            This lists the password changing method.
+            </summary>
+            <param name="customerLogic">Logic for Customers repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.ChangePrice(SkiRental.Logic.ShopLogic)">
+            <summary>
+            This lists the price changing method.
+            </summary>
+            <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.ChangePayment(SkiRental.Logic.ShopLogic)">
+            <summary>
+            This lists the payment method changing method.
+            </summary>
+            <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.IntParse(System.String)">
+            <summary>
+            It converts the string value into integer.
+            </summary>
+            <returns>An integer.</returns>
+        </member>
     </members>
 </doc>

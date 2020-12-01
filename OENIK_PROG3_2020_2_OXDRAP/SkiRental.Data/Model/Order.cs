@@ -1,5 +1,5 @@
-﻿// <copyright file="Order.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// <copyright file="Order.cs" company="OXDRAP">
+// Copyright (c) OXDRAP. All rights reserved.
 // </copyright>
 
 namespace SkiRental.Data
@@ -73,11 +73,20 @@ namespace SkiRental.Data
         /// </summary>
         public int? Promotion { get; set; }
 
+        /// <summary>
+        /// Gets the ski equipments.
+        /// This is a navigation property.
+        /// </summary>
+        [NotMapped]
+        public virtual IReadOnlyCollection<SkiEquipments> SkiEquipments { get; }
+
+        /// <summary>
+        /// This is the overrided ToString method of Order.
+        /// </summary>
+        /// <returns>It returns the ID, payment method, rental dates, promotions and the name of the customer.</returns>
         public override string ToString()
         {
-            return $"{this.Payment}";
+            return $"ID: {this.CustomerId}, Payment method: {this.Payment}, Rental dates: {this.FirstDate.ToShortDateString()} - {this.LastDate.ToShortDateString()}, Promotions: {this.Promotion}, Name of customer: {this.Customer.Name}";
         }
-
-        public virtual ICollection<SkiEquipments> SkiEquipments { get; set; }
     }
 }

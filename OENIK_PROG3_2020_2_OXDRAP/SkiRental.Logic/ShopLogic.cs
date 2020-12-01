@@ -1,52 +1,68 @@
-﻿using SkiRental.Data;
-using SkiRental.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿// <copyright file="ShopLogic.cs" company="OXDRAP">
+// Copyright (c) OXDRAP. All rights reserved.
+// </copyright>
 
 namespace SkiRental.Logic
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using SkiRental.Data;
+    using SkiRental.Repository;
+
+    /// <summary>
+    /// This is the logic class of the Orders and the SkiEquipments.
+    /// </summary>
     public class ShopLogic : IShopLogic
     {
-        IOrderRepository orderRepo;
+        private IOrderRepository orderRepo;
 
-        ISkiEquipmentsRepository equipmentRepo;
+        private ISkiEquipmentsRepository equipmentRepo;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShopLogic"/> class.
+        /// </summary>
+        /// <param name="orderRepository">Repository of the orders.</param>
+        /// <param name="skiEquipmentsRepository">Repository of the ski equipments.</param>
         public ShopLogic(IOrderRepository orderRepository, ISkiEquipmentsRepository skiEquipmentsRepository)
         {
             this.orderRepo = orderRepository;
             this.equipmentRepo = skiEquipmentsRepository;
         }
 
+        /// <inheritdoc/>
         public void ChangePayment(int id, string paymentMethod)
         {
-            orderRepo.ChangePayment(id, paymentMethod);
+            this.orderRepo.ChangePayment(id, paymentMethod);
         }
 
+        /// <inheritdoc/>
         public void ChangePrice(int id, int newPrice)
         {
-            equipmentRepo.ChangePrice(id, newPrice);
+            this.equipmentRepo.ChangePrice(id, newPrice);
         }
 
+        /// <inheritdoc/>
         public IList<Order> GetAllOrders()
         {
-            return orderRepo.GetAll().ToList();
+            return this.orderRepo.GetAll().ToList();
         }
 
+        /// <inheritdoc/>
         public IList<SkiEquipments> GetAllSkiEquipments()
         {
-            return equipmentRepo.GetAll().ToList();
+            return this.equipmentRepo.GetAll().ToList();
         }
 
+        /// <inheritdoc/>
         public Order GetOrderById(int id)
         {
-            return orderRepo.GetOne(id);
+            return this.orderRepo.GetOne(id);
         }
 
+        /// <inheritdoc/>
         public SkiEquipments GetSkiEquipmentsById(int id)
         {
-            return equipmentRepo.GetOne(id);
+            return this.equipmentRepo.GetOne(id);
         }
     }
 }

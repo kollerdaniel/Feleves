@@ -4,5 +4,125 @@
         <name>SkiRental.Logic</name>
     </assembly>
     <members>
+        <member name="T:SkiRental.Logic.CustomerLogic">
+            <summary>
+            This is the logic class of the Customers.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.CustomerLogic.#ctor(SkiRental.Repository.ICustomerRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.Logic.CustomerLogic"/> class.
+            </summary>
+            <param name="customerRepo">Repository of customer.</param>
+        </member>
+        <member name="M:SkiRental.Logic.CustomerLogic.ChangePassword(System.Int32,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.CustomerLogic.GetAllCustomers">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.CustomerLogic.GetCustomerById(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SkiRental.Logic.ICustomerLogic">
+            <summary>
+            This is the interface of the logic class of the Customers.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.ICustomerLogic.GetCustomerById(System.Int32)">
+            <summary>
+            This is the get one method.
+            </summary>
+            <param name="id">ID.</param>
+            <returns>It returns one entity by ID.</returns>
+        </member>
+        <member name="M:SkiRental.Logic.ICustomerLogic.ChangePassword(System.Int32,System.String)">
+            <summary>
+            It changes the password by ID.
+            </summary>
+            <param name="id">ID of an entity.</param>
+            <param name="newPassword">New password.</param>
+        </member>
+        <member name="M:SkiRental.Logic.ICustomerLogic.GetAllCustomers">
+            <summary>
+            This is the get all method for the Customers table.
+            </summary>
+            <returns>It returns a list of the entities.</returns>
+        </member>
+        <member name="T:SkiRental.Logic.IShopLogic">
+            <summary>
+            This is the interface of the logic class of the Orders and the SkiEquipments.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.IShopLogic.GetOrderById(System.Int32)">
+            <summary>
+            This is the get one method.
+            </summary>
+            <param name="id">ID.</param>
+            <returns>It returns one entity by ID.</returns>
+        </member>
+        <member name="M:SkiRental.Logic.IShopLogic.ChangePayment(System.Int32,System.String)">
+            <summary>
+            It changes the payment method by ID.
+            </summary>
+            <param name="id">ID of the entity.</param>
+            <param name="paymentMethod">The new payment method.</param>
+        </member>
+        <member name="M:SkiRental.Logic.IShopLogic.GetAllOrders">
+            <summary>
+            This is the get all method for the Orders table.
+            </summary>
+            <returns>It returns a list of the entities.</returns>
+        </member>
+        <member name="M:SkiRental.Logic.IShopLogic.GetSkiEquipmentsById(System.Int32)">
+            <summary>
+            This is the get one method.
+            </summary>
+            <param name="id">ID of the entity.</param>
+            <returns>It returns an entity by ID.</returns>
+        </member>
+        <member name="M:SkiRental.Logic.IShopLogic.ChangePrice(System.Int32,System.Int32)">
+            <summary>
+            It changes the price of the entity.
+            </summary>
+            <param name="id">ID of the entity.</param>
+            <param name="newPrice">New price.</param>
+        </member>
+        <member name="M:SkiRental.Logic.IShopLogic.GetAllSkiEquipments">
+            <summary>
+            This is the get all method for the Orders table.
+            </summary>
+            <returns>It returns a list of the entities.</returns>
+        </member>
+        <member name="T:SkiRental.Logic.ShopLogic">
+            <summary>
+            This is the logic class of the Orders and the SkiEquipments.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.#ctor(SkiRental.Repository.IOrderRepository,SkiRental.Repository.ISkiEquipmentsRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.Logic.ShopLogic"/> class.
+            </summary>
+            <param name="orderRepository">Repository of the orders.</param>
+            <param name="skiEquipmentsRepository">Repository of the ski equipments.</param>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.ChangePayment(System.Int32,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.ChangePrice(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.GetAllOrders">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.GetAllSkiEquipments">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.GetOrderById(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.GetSkiEquipmentsById(System.Int32)">
+            <inheritdoc/>
+        </member>
     </members>
 </doc>
