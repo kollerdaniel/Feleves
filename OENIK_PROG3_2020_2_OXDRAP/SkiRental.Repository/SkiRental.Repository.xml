@@ -75,6 +75,7 @@
             It removes an entity by ID.
             </summary>
             <param name="id">ID.</param>
+            <returns>It returns the entity does exists.</returns>
         </member>
         <member name="T:SkiRental.Repository.ISkiEquipmentsRepository">
             <summary>

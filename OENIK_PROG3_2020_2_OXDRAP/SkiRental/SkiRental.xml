@@ -78,6 +78,30 @@
             </summary>
             <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
         </member>
+        <member name="M:SkiRental.Program.MenuMethods.DeleteCustomer(SkiRental.Repository.CustomerRepository)">
+            <summary>
+            This is the customer eraser menu method.
+            </summary>
+            <param name="customer">Customer repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.DeleteOrder(SkiRental.Repository.OrderRepository)">
+            <summary>
+            This is the order eraser menu method.
+            </summary>
+            <param name="order">Order repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.DeleteEquipment(SkiRental.Repository.SkiEquipmentsRepository)">
+            <summary>
+            This is the order eraser menu method.
+            </summary>
+            <param name="skiEquipments">Ski equipments repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.InsertCustomer(SkiRental.Logic.CustomerLogic)">
+            <summary>
+            It asks about customer datas.
+            </summary>
+            <param name="customer">Customer logic.</param>
+        </member>
         <member name="M:SkiRental.Program.MenuMethods.IntParse(System.String)">
             <summary>
             It converts the string value into integer.

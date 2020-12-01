@@ -18,6 +18,9 @@
         <member name="M:SkiRental.Logic.CustomerLogic.ChangePassword(System.Int32,System.String)">
             <inheritdoc/>
         </member>
+        <member name="M:SkiRental.Logic.CustomerLogic.CreateCustomer(SkiRental.Data.Customer)">
+            <inheritdoc/>
+        </member>
         <member name="M:SkiRental.Logic.CustomerLogic.GetAllCustomers">
             <inheritdoc/>
         </member>
@@ -48,6 +51,12 @@
             This is the get all method for the Customers table.
             </summary>
             <returns>It returns a list of the entities.</returns>
+        </member>
+        <member name="M:SkiRental.Logic.ICustomerLogic.CreateCustomer(SkiRental.Data.Customer)">
+            <summary>
+            It creates a new customer.
+            </summary>
+            <param name="entity">New entity.</param>
         </member>
         <member name="T:SkiRental.Logic.IShopLogic">
             <summary>
@@ -94,6 +103,18 @@
             </summary>
             <returns>It returns a list of the entities.</returns>
         </member>
+        <member name="M:SkiRental.Logic.IShopLogic.CreateOrder(SkiRental.Data.Order)">
+            <summary>
+            It creates a new order.
+            </summary>
+            <param name="entity">New entity.</param>
+        </member>
+        <member name="M:SkiRental.Logic.IShopLogic.CreateEquipment(SkiRental.Data.SkiEquipments)">
+            <summary>
+            It creates a new equipment.
+            </summary>
+            <param name="entity">New entity.</param>
+        </member>
         <member name="T:SkiRental.Logic.ShopLogic">
             <summary>
             This is the logic class of the Orders and the SkiEquipments.
@@ -110,6 +131,12 @@
             <inheritdoc/>
         </member>
         <member name="M:SkiRental.Logic.ShopLogic.ChangePrice(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.CreateEquipment(SkiRental.Data.SkiEquipments)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.CreateOrder(SkiRental.Data.Order)">
             <inheritdoc/>
         </member>
         <member name="M:SkiRental.Logic.ShopLogic.GetAllOrders">
