@@ -37,6 +37,7 @@ namespace SkiRental.Repository
         /// It removes an entity by ID.
         /// </summary>
         /// <param name="id">ID.</param>
-        void Remove(int id);
+        /// <returns>It returns the entity does exists.</returns>
+        bool Remove(int id);
     }
 }

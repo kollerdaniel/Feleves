@@ -31,5 +31,11 @@ namespace SkiRental.Logic
         /// </summary>
         /// <returns>It returns a list of the entities.</returns>
         IList<Customer> GetAllCustomers();
+
+        /// <summary>
+        /// It creates a new customer.
+        /// </summary>
+        /// <param name="entity">New entity.</param>
+        void CreateCustomer(Customer entity);
     }
 }

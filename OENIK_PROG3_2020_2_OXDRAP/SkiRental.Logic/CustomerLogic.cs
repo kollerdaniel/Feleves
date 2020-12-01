@@ -33,6 +33,12 @@ namespace SkiRental.Logic
         }
 
         /// <inheritdoc/>
+        public void CreateCustomer(Customer entity)
+        {
+            this.customerRepo.Insert(entity);
+        }
+
+        /// <inheritdoc/>
         public IList<Customer> GetAllCustomers()
         {
             return this.customerRepo.GetAll().ToList();

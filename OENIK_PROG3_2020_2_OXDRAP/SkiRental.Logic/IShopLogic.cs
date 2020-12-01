@@ -51,5 +51,17 @@ namespace SkiRental.Logic
         /// </summary>
         /// <returns>It returns a list of the entities.</returns>
         IList<SkiEquipments> GetAllSkiEquipments();
+
+        /// <summary>
+        /// It creates a new order.
+        /// </summary>
+        /// <param name="entity">New entity.</param>
+        void CreateOrder(Order entity);
+
+        /// <summary>
+        /// It creates a new equipment.
+        /// </summary>
+        /// <param name="entity">New entity.</param>
+        void CreateEquipment(SkiEquipments entity);
     }
 }

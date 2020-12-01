@@ -42,6 +42,18 @@ namespace SkiRental.Logic
         }
 
         /// <inheritdoc/>
+        public void CreateEquipment(SkiEquipments entity)
+        {
+            this.equipmentRepo.Insert(entity);
+        }
+
+        /// <inheritdoc/>
+        public void CreateOrder(Order entity)
+        {
+            this.orderRepo.Insert(entity);
+        }
+
+        /// <inheritdoc/>
         public IList<Order> GetAllOrders()
         {
             return this.orderRepo.GetAll().ToList();

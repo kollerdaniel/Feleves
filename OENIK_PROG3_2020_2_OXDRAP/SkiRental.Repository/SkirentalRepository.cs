@@ -46,10 +46,16 @@ namespace SkiRental.Repository
         }
 
         /// <inheritdoc/>
-        public void Remove(int id)
+        public bool Remove(int id)
         {
-            this.Ctx.Set<T>().Remove(this.GetOne(id));
-            this.Ctx.SaveChanges();
+            if (this.GetOne(id) != null)
+            {
+                this.Ctx.Set<T>().Remove(this.GetOne(id));
+                this.Ctx.SaveChanges();
+                return true;
+            }
+
+            return false;
         }
     }
 }
