@@ -452,7 +452,47 @@ namespace SkiRental.Program
             {
                 valid = true;
             }
+
             shop?.CreateEquipment(new Data.SkiEquipments() { OrderId = orderID, Name = name, Manufacturer = manufacturer, Difficulty = difficulty, Price = price, Size = size, Status = valid });
+        }
+
+        /// <summary>
+        /// It lists all the Head skis for which they have already been paid.
+        /// </summary>
+        /// <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        public static void PaidHead(ShopLogic shopLogic)
+        {
+            foreach (var item in shopLogic?.PaidHead())
+            {
+                Console.WriteLine(item);
+                Console.ReadLine();
+            }
+        }
+
+        /// <summary>
+        /// It lists all the skis, that have promotion.
+        /// </summary>
+        /// <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        public static void PromotionOver170(ShopLogic shopLogic)
+        {
+            foreach (var item in shopLogic?.PromotionOver170())
+            {
+                Console.WriteLine(item);
+                Console.ReadLine();
+            }
+        }
+
+        /// <summary>
+        /// Lists all the beginner customers who use credit card.
+        /// </summary>
+        /// <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        public static void BeginnersWithCreditCard(ShopLogic shopLogic)
+        {
+            foreach (var item in shopLogic?.BeginnersWithCreditCard())
+            {
+                Console.WriteLine(item);
+                Console.ReadLine();
+            }
         }
 
         /// <summary>

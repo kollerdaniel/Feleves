@@ -58,6 +58,11 @@ namespace SkiRental.Program
                 .Add("Delete Order", () => MenuMethods.DeleteOrder(orderRepo))
                 .Add("Delete Equipment", () => MenuMethods.DeleteEquipment(equipmentRepo))
                 .Add("Back", ConsoleMenu.Close).Show())
+                .Add("Queries", () => new ConsoleMenu()
+                .Add("PaidHead", () => MenuMethods.PaidHead(shopLogic))
+                .Add("PromotionOver170", () => MenuMethods.PromotionOver170(shopLogic))
+                .Add("BeginnersWithCreditCard", () => MenuMethods.BeginnersWithCreditCard(shopLogic))
+                .Add("Back", ConsoleMenu.Close).Show())
                 .Add(">> EXIT", ConsoleMenu.Close);
 
             menu.Show();
