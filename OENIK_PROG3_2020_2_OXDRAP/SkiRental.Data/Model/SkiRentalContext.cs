@@ -106,11 +106,8 @@ namespace SkiRental.Data
             o3.CustomerId = c8.CustomerId;
 
             s21.OrderId = o4.OrderId;
-            s11.OrderId = o7.OrderId;
             s20.OrderId = o5.OrderId;
-            s03.OrderId = o0.OrderId;
             s03.OrderId = o9.OrderId;
-            s11.OrderId = o6.OrderId;
             s02.OrderId = o2.OrderId;
             s23.OrderId = o8.OrderId;
             s00.OrderId = o1.OrderId;

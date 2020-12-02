@@ -63,5 +63,23 @@ namespace SkiRental.Logic
         /// </summary>
         /// <param name="entity">New entity.</param>
         void CreateEquipment(SkiEquipments entity);
+
+        /// <summary>
+        /// It lists all the Head skis for which they have already been paid.
+        /// </summary>
+        /// <returns>List of equipments.</returns>
+        IList<string> PaidHead();
+
+        /// <summary>
+        /// It lists all the skis, that have promotion.
+        /// </summary>
+        /// <returns>List of equipments.</returns>
+        IList<string> PromotionOver170();
+
+        /// <summary>
+        /// Lists all the beginner customers who use credit card.
+        /// </summary>
+        /// <returns>List of customers.</returns>
+        IList<string> BeginnersWithCreditCard();
     }
 }
