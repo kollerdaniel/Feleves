@@ -114,6 +114,24 @@
             </summary>
             <param name="shop">Logic for Orders repository and SkiEqupments repository.</param>
         </member>
+        <member name="M:SkiRental.Program.MenuMethods.PaidHead(SkiRental.Logic.ShopLogic)">
+            <summary>
+            It lists all the Head skis for which they have already been paid.
+            </summary>
+            <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.PromotionOver170(SkiRental.Logic.ShopLogic)">
+            <summary>
+            It lists all the skis, that have promotion.
+            </summary>
+            <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        </member>
+        <member name="M:SkiRental.Program.MenuMethods.BeginnersWithCreditCard(SkiRental.Logic.ShopLogic)">
+            <summary>
+            Lists all the beginner customers who use credit card.
+            </summary>
+            <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        </member>
         <member name="M:SkiRental.Program.MenuMethods.ToConsole(System.String)">
             <summary>
             I can avoid Console.Writeline with this method.

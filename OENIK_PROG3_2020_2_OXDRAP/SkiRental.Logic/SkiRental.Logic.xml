@@ -115,6 +115,24 @@
             </summary>
             <param name="entity">New entity.</param>
         </member>
+        <member name="M:SkiRental.Logic.IShopLogic.PaidHead">
+            <summary>
+            It lists all the Head skis for which they have already been paid.
+            </summary>
+            <returns>List of equipments.</returns>
+        </member>
+        <member name="M:SkiRental.Logic.IShopLogic.PromotionOver170">
+            <summary>
+            It lists all the skis, that have promotion.
+            </summary>
+            <returns>List of equipments.</returns>
+        </member>
+        <member name="M:SkiRental.Logic.IShopLogic.BeginnersWithCreditCard">
+            <summary>
+            Lists all the beginner customers who use credit card.
+            </summary>
+            <returns>List of customers.</returns>
+        </member>
         <member name="T:SkiRental.Logic.ShopLogic">
             <summary>
             This is the logic class of the Orders and the SkiEquipments.
@@ -149,6 +167,15 @@
             <inheritdoc/>
         </member>
         <member name="M:SkiRental.Logic.ShopLogic.GetSkiEquipmentsById(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.PaidHead">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.PromotionOver170">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.BeginnersWithCreditCard">
             <inheritdoc/>
         </member>
     </members>
