@@ -76,6 +76,12 @@
             </summary>
             <returns>It returns the name, password, difficulty, size, birthdate, postcode and email of the customer.</returns>
         </member>
+        <member name="M:SkiRental.Data.Customer.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Data.Customer.GetHashCode">
+            <inheritdoc/>
+        </member>
         <member name="T:SkiRental.Data.Order">
             <summary>
             This is the table of the orders.
@@ -138,6 +144,12 @@
             </summary>
             <returns>It returns the ID, payment method, rental dates, promotions and the name of the customer.</returns>
         </member>
+        <member name="M:SkiRental.Data.Order.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Data.Order.GetHashCode">
+            <inheritdoc/>
+        </member>
         <member name="T:SkiRental.Data.SkiEquipments">
             <summary>
             This is the table of the ski equipments.
@@ -193,6 +205,12 @@
             This is the overrided ToString method of Ski equipments.
             </summary>
             <returns>It returns the name, the manufacturer, the price, the size, the difficulty and the status of the ski.</returns>
+        </member>
+        <member name="M:SkiRental.Data.SkiEquipments.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Data.SkiEquipments.GetHashCode">
+            <inheritdoc/>
         </member>
         <member name="T:SkiRental.Data.SkiRentalContext">
             <summary>
