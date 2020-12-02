@@ -25,6 +25,18 @@
             Tests GetAllCustomer method. This is a noncrud.
             </summary>
         </member>
+        <member name="M:SkiRental.Logic.Tests.CustomerLogicTest.TestCreateCustomer">
+            <summary>
+            Tests Insert method. This is a noncrud.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.Tests.CustomerLogicTest.TestUpdate(System.Int32,System.String)">
+            <summary>
+            Tests Update method. This is a noncrud.
+            </summary>
+            <param name="id">Id.</param>
+            <param name="newPassword">New password.</param>
+        </member>
         <member name="T:SkiRental.Logic.Tests.ShopLogicTest">
             <summary>
             This is the test class for the ShopLogic.
