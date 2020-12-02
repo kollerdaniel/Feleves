@@ -88,5 +88,23 @@ namespace SkiRental.Data
         {
             return $"ID: {this.OrderId}, Payment method: {this.Payment}, Rental dates: {this.FirstDate.ToShortDateString()} - {this.LastDate.ToShortDateString()}, Promotions: {this.Promotion}, Name of customer: {this.Customer.Name}";
         }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (obj is Order)
+            {
+                Order other = obj as Order;
+                return this.Customer == other.Customer && this.CustomerId == other.CustomerId && this.CustomerPaid == other.CustomerPaid && this.FirstDate == other.FirstDate && this.LastDate == other.LastDate && this.OrderId == other.OrderId && this.Payment == other.Payment && this.Promotion == other.Promotion && this.SkiEquipments == other.SkiEquipments;
+            }
+
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            return this.OrderId;
+        }
     }
 }

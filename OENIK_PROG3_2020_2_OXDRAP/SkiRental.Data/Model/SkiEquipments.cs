@@ -80,5 +80,23 @@ namespace SkiRental.Data
         {
             return $"ID: {this.SkiEquipmentsId}, name: {this.Name}, manufacturer: {this.Manufacturer}, price: {this.Price}, size: {this.Size}, difficulty: {this.Difficulty}, status: {this.Status}";
         }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (obj is SkiEquipments)
+            {
+                SkiEquipments other = obj as SkiEquipments;
+                return this.Difficulty == other.Difficulty && this.Manufacturer == other.Manufacturer && this.Name == other.Name && this.Order == other.Order && this.OrderId == other.OrderId && this.Price == other.Price && this.Size == other.Size && this.SkiEquipmentsId == other.SkiEquipmentsId && this.Status == other.Status;
+            }
+
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            return this.SkiEquipmentsId;
+        }
     }
 }

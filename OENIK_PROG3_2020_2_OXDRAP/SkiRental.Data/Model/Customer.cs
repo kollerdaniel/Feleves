@@ -104,5 +104,23 @@ namespace SkiRental.Data
         {
             return $"Customers name: {this.Name}, password: {this.Password}, difficulty: {this.Difficulty}, size: {this.Size}, birthdate: {this.Birthdate.ToShortDateString()}, postcode: {this.Postcode}, email: {this.Email}";
         }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (obj is Customer)
+            {
+                Customer other = obj as Customer;
+                return this.Birthdate == other.Birthdate && this.CustomerId == other.CustomerId && this.Difficulty == other.Difficulty && this.Email == other.Email && this.FirstName == other.FirstName && this.LastName == other.LastName && this.Orders == other.Orders && this.Password == other.Password && this.Postcode == other.Postcode && this.Size == other.Size;
+            }
+
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            return this.CustomerId;
+        }
     }
 }
