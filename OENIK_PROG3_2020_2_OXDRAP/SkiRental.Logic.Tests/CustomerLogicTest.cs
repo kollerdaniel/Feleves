@@ -18,6 +18,7 @@ namespace SkiRental.Logic.Tests
     [TestFixture]
     public class CustomerLogicTest
     {
+        private readonly Customer addtest = new Customer() { CustomerId = 4, FirstName = "Ken", LastName = "Cobbett", Password = "kencobbett098", Birthdate = new DateTime(1981, 04, 16), Difficulty = "pro", Email = "kencobbett@gmail.com", Postcode = 12842, Size = 190 };
         private List<Customer> customers;
 
         private CustomerLogic CustomerLogic { get; set; }
@@ -66,6 +67,34 @@ namespace SkiRental.Logic.Tests
             var result = this.CustomerLogic.GetAllCustomers();
 
             this.MockedCustomerRepository.Verify(x => x.GetAll(), Times.Once);
+        }
+
+        /// <summary>
+        /// Tests Insert method. This is a noncrud.
+        /// </summary>
+        [Test]
+        public void TestCreateCustomer()
+        {
+            this.MockedCustomerRepository.Setup(repo => repo.Insert(It.IsAny<Customer>()));
+
+            this.CustomerLogic.CreateCustomer(this.addtest);
+
+            this.MockedCustomerRepository.Verify(repo => repo.Insert(this.addtest), Times.Once);
+        }
+
+        /// <summary>
+        /// Tests Update method. This is a noncrud.
+        /// </summary>
+        /// <param name="id">Id.</param>
+        /// <param name="newPassword">New password.</param>
+        [TestCase(1, "newpassword")]
+        public void TestUpdate(int id, string newPassword)
+        {
+            this.MockedCustomerRepository.Setup(repo => repo.ChangePassword(It.IsAny<int>(), It.IsAny<string>()));
+
+            this.CustomerLogic.ChangePassword(id, newPassword);
+
+            this.MockedCustomerRepository.Verify(repo => repo.ChangePassword(id, newPassword), Times.Once);
         }
     }
 }
