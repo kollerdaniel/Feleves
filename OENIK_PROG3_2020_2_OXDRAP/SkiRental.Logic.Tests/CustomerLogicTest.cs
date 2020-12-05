@@ -18,7 +18,7 @@ namespace SkiRental.Logic.Tests
     [TestFixture]
     public class CustomerLogicTest
     {
-        private readonly Customer addtest = new Customer() { CustomerId = 4, FirstName = "Ken", LastName = "Cobbett", Password = "kencobbett098", Birthdate = new DateTime(1981, 04, 16), Difficulty = "pro", Email = "kencobbett@gmail.com", Postcode = 12842, Size = 190 };
+        private Customer addtest;
         private List<Customer> customers;
 
         private CustomerLogic CustomerLogic { get; set; }
@@ -31,8 +31,7 @@ namespace SkiRental.Logic.Tests
         [OneTimeSetUp]
         public void Setup()
         {
-            this.MockedCustomerRepository = new Mock<ICustomerRepository>(MockBehavior.Loose);
-            this.CustomerLogic = new CustomerLogic(this.MockedCustomerRepository.Object);
+            this.addtest = new Customer() { CustomerId = 4, FirstName = "Ken", LastName = "Cobbett", Password = "kencobbett098", Birthdate = new DateTime(1981, 04, 16), Difficulty = "pro", Email = "kencobbett@gmail.com", Postcode = 12842, Size = 190 };
             this.customers = new List<Customer>();
 
             this.customers.Add(new Customer() { CustomerId = 1, FirstName = "Louie", LastName = "Rogers", Password = "Louirog123", Birthdate = new DateTime(1988, 02, 17), Difficulty = "advanced", Email = "louierogers@gmail.com", Postcode = 12842, Size = 170 });
@@ -41,13 +40,16 @@ namespace SkiRental.Logic.Tests
         }
 
         /// <summary>
-        /// Tests GetCustomerById method. This is a noncrud.
+        /// Tests GetCustomerById method. This is a crud.
         /// </summary>
         /// <param name="id">Id.</param>
         [TestCase(0)]
         [TestCase(1)]
         public void TestGetCustomerByID(int id)
         {
+            this.MockedCustomerRepository = new Mock<ICustomerRepository>(MockBehavior.Loose);
+            this.CustomerLogic = new CustomerLogic(this.MockedCustomerRepository.Object);
+
             this.MockedCustomerRepository.Setup(repo => repo.GetOne(It.Is<int>(id => id >= 0 && id < this.customers.Count))).Returns(this.customers[id]);
 
             var result = this.CustomerLogic.GetCustomerById(id);
@@ -57,11 +59,14 @@ namespace SkiRental.Logic.Tests
         }
 
         /// <summary>
-        /// Tests GetAllCustomer method. This is a noncrud.
+        /// Tests GetAllCustomer method. This is a crud.
         /// </summary>
         [Test]
         public void TestGetAllCustomers()
         {
+            this.MockedCustomerRepository = new Mock<ICustomerRepository>(MockBehavior.Loose);
+            this.CustomerLogic = new CustomerLogic(this.MockedCustomerRepository.Object);
+
             this.MockedCustomerRepository.Setup(repo => repo.GetAll()).Returns(this.customers.AsQueryable());
 
             var result = this.CustomerLogic.GetAllCustomers();
@@ -70,11 +75,14 @@ namespace SkiRental.Logic.Tests
         }
 
         /// <summary>
-        /// Tests Insert method. This is a noncrud.
+        /// Tests Insert method. This is a crud.
         /// </summary>
         [Test]
         public void TestCreateCustomer()
         {
+            this.MockedCustomerRepository = new Mock<ICustomerRepository>(MockBehavior.Loose);
+            this.CustomerLogic = new CustomerLogic(this.MockedCustomerRepository.Object);
+
             this.MockedCustomerRepository.Setup(repo => repo.Insert(It.IsAny<Customer>()));
 
             this.CustomerLogic.CreateCustomer(this.addtest);
@@ -83,13 +91,16 @@ namespace SkiRental.Logic.Tests
         }
 
         /// <summary>
-        /// Tests Update method. This is a noncrud.
+        /// Tests Update method. This is a crud.
         /// </summary>
         /// <param name="id">Id.</param>
         /// <param name="newPassword">New password.</param>
         [TestCase(1, "newpassword")]
         public void TestUpdate(int id, string newPassword)
         {
+            this.MockedCustomerRepository = new Mock<ICustomerRepository>(MockBehavior.Loose);
+            this.CustomerLogic = new CustomerLogic(this.MockedCustomerRepository.Object);
+
             this.MockedCustomerRepository.Setup(repo => repo.ChangePassword(It.IsAny<int>(), It.IsAny<string>()));
 
             this.CustomerLogic.ChangePassword(id, newPassword);
