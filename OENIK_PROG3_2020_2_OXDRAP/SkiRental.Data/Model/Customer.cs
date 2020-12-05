@@ -111,7 +111,7 @@ namespace SkiRental.Data
             if (obj is Customer)
             {
                 Customer other = obj as Customer;
-                return this.Birthdate == other.Birthdate && this.CustomerId == other.CustomerId && this.Difficulty == other.Difficulty && this.Email == other.Email && this.FirstName == other.FirstName && this.LastName == other.LastName && this.Orders == other.Orders && this.Password == other.Password && this.Postcode == other.Postcode && this.Size == other.Size;
+                return this.Birthdate == other.Birthdate && this.Difficulty == other.Difficulty && this.Email == other.Email && this.FirstName == other.FirstName && this.LastName == other.LastName && this.Password == other.Password && this.Postcode == other.Postcode && this.Size == other.Size;
             }
 
             return false;

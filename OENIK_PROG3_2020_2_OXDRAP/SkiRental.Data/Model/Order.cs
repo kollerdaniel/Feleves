@@ -95,7 +95,7 @@ namespace SkiRental.Data
             if (obj is Order)
             {
                 Order other = obj as Order;
-                return this.Customer == other.Customer && this.CustomerId == other.CustomerId && this.CustomerPaid == other.CustomerPaid && this.FirstDate == other.FirstDate && this.LastDate == other.LastDate && this.OrderId == other.OrderId && this.Payment == other.Payment && this.Promotion == other.Promotion && this.SkiEquipments == other.SkiEquipments;
+                return this.CustomerPaid == other.CustomerPaid && this.FirstDate == other.FirstDate && this.LastDate == other.LastDate && this.OrderId == other.OrderId && this.Payment == other.Payment && this.Promotion == other.Promotion;
             }
 
             return false;

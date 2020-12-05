@@ -87,7 +87,7 @@ namespace SkiRental.Data
             if (obj is SkiEquipments)
             {
                 SkiEquipments other = obj as SkiEquipments;
-                return this.Difficulty == other.Difficulty && this.Manufacturer == other.Manufacturer && this.Name == other.Name && this.Order == other.Order && this.OrderId == other.OrderId && this.Price == other.Price && this.Size == other.Size && this.SkiEquipmentsId == other.SkiEquipmentsId && this.Status == other.Status;
+                return this.Difficulty == other.Difficulty && this.Manufacturer == other.Manufacturer && this.Price == other.Price && this.Size == other.Size && this.SkiEquipmentsId == other.SkiEquipmentsId && this.Status == other.Status;
             }
 
             return false;
