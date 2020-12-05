@@ -16,23 +16,23 @@
         </member>
         <member name="M:SkiRental.Logic.Tests.CustomerLogicTest.TestGetCustomerByID(System.Int32)">
             <summary>
-            Tests GetCustomerById method. This is a noncrud.
+            Tests GetCustomerById method. This is a crud.
             </summary>
             <param name="id">Id.</param>
         </member>
         <member name="M:SkiRental.Logic.Tests.CustomerLogicTest.TestGetAllCustomers">
             <summary>
-            Tests GetAllCustomer method. This is a noncrud.
+            Tests GetAllCustomer method. This is a crud.
             </summary>
         </member>
         <member name="M:SkiRental.Logic.Tests.CustomerLogicTest.TestCreateCustomer">
             <summary>
-            Tests Insert method. This is a noncrud.
+            Tests Insert method. This is a crud.
             </summary>
         </member>
         <member name="M:SkiRental.Logic.Tests.CustomerLogicTest.TestUpdate(System.Int32,System.String)">
             <summary>
-            Tests Update method. This is a noncrud.
+            Tests Update method. This is a crud.
             </summary>
             <param name="id">Id.</param>
             <param name="newPassword">New password.</param>
@@ -41,6 +41,32 @@
             <summary>
             This is the test class for the ShopLogic.
             </summary>
+        </member>
+        <member name="M:SkiRental.Logic.Tests.ShopLogicTest.TestPromotionOver170">
+            <summary>
+            Tests the PromotinOver170 method. This is a noncrud.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.Tests.ShopLogicTest.TestPromotionOver170Bad">
+            <summary>
+            Tests the PromotinOver170 method with fake data. This is a noncrud.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.Tests.ShopLogicTest.TestPaidHead">
+            <summary>
+            Tests the PromotinOver170 method. This is a noncrud.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.Tests.ShopLogicTest.TestBeginnersWithCreditCard">
+            <summary>
+            Tests the BeginnersWithCreditCard method. This is a noncrud.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.Tests.ShopLogicTest.TestDeleteOrder(System.Int32)">
+            <summary>
+            Tests DeleteOrder method. This is a crud.
+            </summary>
+            <param name="id">Id.</param>
         </member>
     </members>
 </doc>

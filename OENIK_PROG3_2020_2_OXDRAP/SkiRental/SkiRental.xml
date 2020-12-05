@@ -78,23 +78,23 @@
             </summary>
             <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
         </member>
-        <member name="M:SkiRental.Program.MenuMethods.DeleteCustomer(SkiRental.Repository.CustomerRepository)">
+        <member name="M:SkiRental.Program.MenuMethods.DeleteCustomer(SkiRental.Logic.CustomerLogic)">
             <summary>
             This is the customer eraser menu method.
             </summary>
-            <param name="customer">Customer repository.</param>
+            <param name="customerLogic">Customer logic class.</param>
         </member>
-        <member name="M:SkiRental.Program.MenuMethods.DeleteOrder(SkiRental.Repository.OrderRepository)">
+        <member name="M:SkiRental.Program.MenuMethods.DeleteOrder(SkiRental.Logic.ShopLogic)">
             <summary>
             This is the order eraser menu method.
             </summary>
-            <param name="order">Order repository.</param>
+            <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
         </member>
-        <member name="M:SkiRental.Program.MenuMethods.DeleteEquipment(SkiRental.Repository.SkiEquipmentsRepository)">
+        <member name="M:SkiRental.Program.MenuMethods.DeleteEquipment(SkiRental.Logic.ShopLogic)">
             <summary>
             This is the order eraser menu method.
             </summary>
-            <param name="skiEquipments">Ski equipments repository.</param>
+            <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
         </member>
         <member name="M:SkiRental.Program.MenuMethods.InsertCustomer(SkiRental.Logic.CustomerLogic)">
             <summary>

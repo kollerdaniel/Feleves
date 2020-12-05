@@ -4,6 +4,35 @@
         <name>SkiRental.Logic</name>
     </assembly>
     <members>
+        <member name="T:SkiRental.Logic.BeginnersResult">
+            <summary>
+            This is a result class for a noncrud method.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Logic.BeginnersResult.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Logic.BeginnersResult.Diff">
+            <summary>
+            Gets or sets the Difficulty.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Logic.BeginnersResult.Payment">
+            <summary>
+            Gets or sets the Payment method.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.BeginnersResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.BeginnersResult.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.BeginnersResult.GetHashCode">
+            <inheritdoc/>
+        </member>
         <member name="T:SkiRental.Logic.CustomerLogic">
             <summary>
             This is the logic class of the Customers.
@@ -19,6 +48,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SkiRental.Logic.CustomerLogic.CreateCustomer(SkiRental.Data.Customer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.CustomerLogic.DeleteCustomer(System.Int32)">
             <inheritdoc/>
         </member>
         <member name="M:SkiRental.Logic.CustomerLogic.GetAllCustomers">
@@ -57,6 +89,13 @@
             It creates a new customer.
             </summary>
             <param name="entity">New entity.</param>
+        </member>
+        <member name="M:SkiRental.Logic.ICustomerLogic.DeleteCustomer(System.Int32)">
+            <summary>
+            It removes an entity by ID.
+            </summary>
+            <param name="id">ID.</param>
+            <returns>It returns the entity does exists.</returns>
         </member>
         <member name="T:SkiRental.Logic.IShopLogic">
             <summary>
@@ -133,6 +172,73 @@
             </summary>
             <returns>List of customers.</returns>
         </member>
+        <member name="M:SkiRental.Logic.IShopLogic.DeleteOrder(System.Int32)">
+            <summary>
+            It removes an entity by ID.
+            </summary>
+            <param name="id">ID.</param>
+            <returns>It returns the entity does exists.</returns>
+        </member>
+        <member name="M:SkiRental.Logic.IShopLogic.DeleteEquipment(System.Int32)">
+            <summary>
+            It removes an entity by ID.
+            </summary>
+            <param name="id">ID.</param>
+            <returns>It returns the entity does exists.</returns>
+        </member>
+        <member name="T:SkiRental.Logic.PaidResult">
+            <summary>
+            This is a result class for a noncrud method.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Logic.PaidResult.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Logic.PaidResult.Manufacturer">
+            <summary>
+            Gets or sets the Manufacturer.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Logic.PaidResult.Size">
+            <summary>
+            Gets or sets the Size.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.PaidResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.PaidResult.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.PaidResult.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:SkiRental.Logic.PromotionResult">
+            <summary>
+            This is a result class for a noncrud method.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Logic.PromotionResult.Size">
+            <summary>
+            Gets or sets the Size.
+            </summary>
+        </member>
+        <member name="P:SkiRental.Logic.PromotionResult.Promotion">
+            <summary>
+            Gets or sets the Promotion.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.PromotionResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.PromotionResult.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.PromotionResult.GetHashCode">
+            <inheritdoc/>
+        </member>
         <member name="T:SkiRental.Logic.ShopLogic">
             <summary>
             This is the logic class of the Orders and the SkiEquipments.
@@ -176,6 +282,12 @@
             <inheritdoc/>
         </member>
         <member name="M:SkiRental.Logic.ShopLogic.BeginnersWithCreditCard">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.DeleteOrder(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.DeleteEquipment(System.Int32)">
             <inheritdoc/>
         </member>
     </members>
