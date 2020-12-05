@@ -37,5 +37,12 @@ namespace SkiRental.Logic
         /// </summary>
         /// <param name="entity">New entity.</param>
         void CreateCustomer(Customer entity);
+
+        /// <summary>
+        /// It removes an entity by ID.
+        /// </summary>
+        /// <param name="id">ID.</param>
+        /// <returns>It returns the entity does exists.</returns>
+        bool DeleteCustomer(int id);
     }
 }

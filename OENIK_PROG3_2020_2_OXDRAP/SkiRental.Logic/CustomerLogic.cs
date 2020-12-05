@@ -39,6 +39,12 @@ namespace SkiRental.Logic
         }
 
         /// <inheritdoc/>
+        public bool DeleteCustomer(int id)
+        {
+            return this.customerRepo.Remove(id);
+        }
+
+        /// <inheritdoc/>
         public IList<Customer> GetAllCustomers()
         {
             return this.customerRepo.GetAll().ToList();
