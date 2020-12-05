@@ -7,6 +7,7 @@ namespace SkiRental.Program
     using System;
     using System.Globalization;
     using System.Linq;
+    using System.Threading;
     using SkiRental.Logic;
     using SkiRental.Repository;
 
@@ -470,6 +471,23 @@ namespace SkiRental.Program
         }
 
         /// <summary>
+        /// Writes out with task, all the Head skis for which they have already been paid.
+        /// </summary>
+        /// <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        public static void PaidHeadAsync(ShopLogic shopLogic)
+        {
+            var task = shopLogic?.PaidHeadAsync();
+            task.Wait();
+            foreach (var item in task.Result)
+            {
+                Console.WriteLine(item);
+                Thread.Sleep(500);
+            }
+
+            Console.ReadLine();
+        }
+
+        /// <summary>
         /// It lists all the skis, that have promotion.
         /// </summary>
         /// <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
@@ -483,6 +501,23 @@ namespace SkiRental.Program
         }
 
         /// <summary>
+        /// Writes out with task, all the skis, that have promotion.
+        /// </summary>
+        /// <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        public static void PromotionOver170Async(ShopLogic shopLogic)
+        {
+            var task = shopLogic?.PromotionOver170Async();
+            task.Wait();
+            foreach (var item in task.Result)
+            {
+                Console.WriteLine(item);
+                Thread.Sleep(500);
+            }
+
+            Console.ReadLine();
+        }
+
+        /// <summary>
         /// Lists all the beginner customers who use credit card.
         /// </summary>
         /// <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
@@ -493,6 +528,23 @@ namespace SkiRental.Program
                 Console.WriteLine(item);
                 Console.ReadLine();
             }
+        }
+
+        /// <summary>
+        /// Lists with task, all the beginner customers who use credit card.
+        /// </summary>
+        /// <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        public static void BeginnersWithCreditCardAsync(ShopLogic shopLogic)
+        {
+            var task = shopLogic?.BeginnersWithCreditCardAsync();
+            task.Wait();
+            foreach (var item in task.Result)
+            {
+                Console.WriteLine(item);
+                Thread.Sleep(500);
+            }
+
+            Console.ReadLine();
         }
 
         /// <summary>

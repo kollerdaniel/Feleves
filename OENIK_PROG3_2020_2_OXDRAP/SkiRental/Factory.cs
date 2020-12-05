@@ -58,10 +58,15 @@ namespace SkiRental.Program
                 .Add("Delete Order", () => MenuMethods.DeleteOrder(shopLogic))
                 .Add("Delete Equipment", () => MenuMethods.DeleteEquipment(shopLogic))
                 .Add("Back", ConsoleMenu.Close).Show())
-                .Add("Queries", () => new ConsoleMenu()
+                .Add("NonCRUDs", () => new ConsoleMenu()
                 .Add("PaidHead", () => MenuMethods.PaidHead(shopLogic))
                 .Add("PromotionOver170", () => MenuMethods.PromotionOver170(shopLogic))
                 .Add("BeginnersWithCreditCard", () => MenuMethods.BeginnersWithCreditCard(shopLogic))
+                .Add("Back", ConsoleMenu.Close).Show())
+                .Add("NonCRUDsAsyncs", () => new ConsoleMenu()
+                .Add("PaidHeadAsync", () => MenuMethods.PaidHeadAsync(shopLogic))
+                .Add("PromotionOver170Async", () => MenuMethods.PromotionOver170Async(shopLogic))
+                .Add("BeginnersWithCreditCardAsync", () => MenuMethods.BeginnersWithCreditCardAsync(shopLogic))
                 .Add("Back", ConsoleMenu.Close).Show())
                 .Add(">> EXIT", ConsoleMenu.Close);
 
