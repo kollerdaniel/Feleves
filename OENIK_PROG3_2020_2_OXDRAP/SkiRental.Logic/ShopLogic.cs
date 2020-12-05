@@ -6,6 +6,7 @@ namespace SkiRental.Logic
 {
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
     using SkiRental.Data;
     using SkiRental.Repository;
 
@@ -135,6 +136,24 @@ namespace SkiRental.Logic
         public bool DeleteEquipment(int id)
         {
             return this.equipmentRepo.Remove(id);
+        }
+
+        /// <inheritdoc/>
+        public Task<IList<PaidResult>> PaidHeadAsync()
+        {
+            return Task.Run(() => this.PaidHead());
+        }
+
+        /// <inheritdoc/>
+        public Task<IList<PromotionResult>> PromotionOver170Async()
+        {
+            return Task.Run(() => this.PromotionOver170());
+        }
+
+        /// <inheritdoc/>
+        public Task<IList<BeginnersResult>> BeginnersWithCreditCardAsync()
+        {
+            return Task.Run(() => this.BeginnersWithCreditCard());
         }
     }
 }

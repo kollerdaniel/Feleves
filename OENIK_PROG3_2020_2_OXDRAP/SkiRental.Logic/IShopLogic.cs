@@ -5,6 +5,7 @@
 namespace SkiRental.Logic
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
     using SkiRental.Data;
 
     /// <summary>
@@ -95,5 +96,23 @@ namespace SkiRental.Logic
         /// <param name="id">ID.</param>
         /// <returns>It returns the entity does exists.</returns>
         bool DeleteEquipment(int id);
+
+        /// <summary>
+        /// It lists all the Head skis for which they have already been paid.
+        /// </summary>
+        /// <returns>An async list.</returns>
+        Task<IList<PaidResult>> PaidHeadAsync();
+
+        /// <summary>
+        /// It lists all the skis, that have promotion.
+        /// </summary>
+        /// <returns>An async list.</returns>
+        Task<IList<PromotionResult>> PromotionOver170Async();
+
+        /// <summary>
+        /// Lists all the beginner customers who use credit card.
+        /// </summary>
+        /// <returns>An async list.</returns>
+        Task<IList<BeginnersResult>> BeginnersWithCreditCardAsync();
     }
 }
