@@ -68,18 +68,32 @@ namespace SkiRental.Logic
         /// It lists all the Head skis for which they have already been paid.
         /// </summary>
         /// <returns>List of equipments.</returns>
-        IList<string> PaidHead();
+        IList<PaidResult> PaidHead();
 
         /// <summary>
         /// It lists all the skis, that have promotion.
         /// </summary>
         /// <returns>List of equipments.</returns>
-        IList<string> PromotionOver170();
+        IList<PromotionResult> PromotionOver170();
 
         /// <summary>
         /// Lists all the beginner customers who use credit card.
         /// </summary>
         /// <returns>List of customers.</returns>
-        IList<string> BeginnersWithCreditCard();
+        IList<BeginnersResult> BeginnersWithCreditCard();
+
+        /// <summary>
+        /// It removes an entity by ID.
+        /// </summary>
+        /// <param name="id">ID.</param>
+        /// <returns>It returns the entity does exists.</returns>
+        bool DeleteOrder(int id);
+
+        /// <summary>
+        /// It removes an entity by ID.
+        /// </summary>
+        /// <param name="id">ID.</param>
+        /// <returns>It returns the entity does exists.</returns>
+        bool DeleteEquipment(int id);
     }
 }
