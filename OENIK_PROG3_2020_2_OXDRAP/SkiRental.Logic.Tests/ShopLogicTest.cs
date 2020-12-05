@@ -38,13 +38,13 @@ namespace SkiRental.Logic.Tests
         [Test]
         public void TestPromotionOver170()
         {
-            var logic = this.ShopLogicWithMocks();
+            this.ShopLogicWithMocks();
             List<PromotionResult> expectedResult = new List<PromotionResult>()
             {
                 new PromotionResult() { Size = 180, Promotion = 25 },
             };
 
-            var actualResult = logic.PromotionOver170();
+            var actualResult = this.ShopLogic.PromotionOver170();
 
             Assert.That(actualResult, Is.EqualTo(expectedResult));
             this.MockedOrderRepository.Verify(repo => repo.GetAll(), Times.Once);
@@ -57,13 +57,13 @@ namespace SkiRental.Logic.Tests
         [Test]
         public void TestPromotionOver170Bad()
         {
-            var logic = this.ShopLogicWithMocks();
+            this.ShopLogicWithMocks();
             List<PromotionResult> expectedResult = new List<PromotionResult>()
             {
                 new PromotionResult() { Size = 183, Promotion = 25 },
             };
 
-            var actualResult = logic.PromotionOver170();
+            var actualResult = this.ShopLogic.PromotionOver170();
 
             Assert.That(actualResult, Is.Not.EqualTo(expectedResult));
             this.MockedOrderRepository.Verify(repo => repo.GetAll(), Times.Once);
@@ -76,7 +76,7 @@ namespace SkiRental.Logic.Tests
         [Test]
         public void TestPaidHead()
         {
-            var logic = this.ShopLogicWithMocks();
+            this.ShopLogicWithMocks();
 
             List<PaidResult> expectedResult = new List<PaidResult>()
             {
@@ -85,9 +85,9 @@ namespace SkiRental.Logic.Tests
                 new PaidResult() { Name = "Supershape", Manufacturer = "Head", Size = 190 },
             };
 
-            var actualResult = logic.PaidHead();
+            var actualResult = this.ShopLogic.PaidHead();
 
-            Assert.That(actualResult.ToString(), Is.EqualTo(expectedResult.ToString()));
+            Assert.That(actualResult, Is.EqualTo(expectedResult));
             this.MockedOrderRepository.Verify(repo => repo.GetAll(), Times.Once);
             this.MockedSkiEquipmentsRepository.Verify(repo => repo.GetAll(), Times.Once);
         }
@@ -98,7 +98,7 @@ namespace SkiRental.Logic.Tests
         [Test]
         public void TestBeginnersWithCreditCard()
         {
-            var logic = this.ShopLogicWithMocks();
+            this.ShopLogicWithMocks();
 
             List<BeginnersResult> expectedResult = new List<BeginnersResult>()
             {
@@ -107,9 +107,9 @@ namespace SkiRental.Logic.Tests
                 new BeginnersResult() { Name = "Theo Lee", Diff = "beginner", Payment = "Credit Card" },
             };
 
-            var actualResult = logic.BeginnersWithCreditCard();
+            var actualResult = this.ShopLogic.BeginnersWithCreditCard();
 
-            Assert.That(actualResult.ToString(), Is.EqualTo(expectedResult.ToString()));
+            Assert.That(actualResult, Is.EqualTo(expectedResult));
             this.MockedOrderRepository.Verify(repo => repo.GetAll(), Times.Once);
             this.MockedSkiEquipmentsRepository.Verify(repo => repo.GetAll(), Times.Never);
         }
@@ -122,9 +122,7 @@ namespace SkiRental.Logic.Tests
         [TestCase(8)]
         public void TestDeleteOrder(int id)
         {
-            this.MockedOrderRepository = new Mock<IOrderRepository>(MockBehavior.Loose);
-            this.MockedSkiEquipmentsRepository = new Mock<ISkiEquipmentsRepository>(MockBehavior.Loose);
-            this.ShopLogic = new ShopLogic(this.MockedOrderRepository.Object, this.MockedSkiEquipmentsRepository.Object);
+            this.ShopLogicWithMocks();
 
             this.MockedOrderRepository.Setup(repo => repo.Remove(It.IsAny<int>()));
 
@@ -133,7 +131,41 @@ namespace SkiRental.Logic.Tests
             this.MockedOrderRepository.Verify(repo => repo.Remove(id), Times.Once);
         }
 
-        private ShopLogic ShopLogicWithMocks()
+        /// <summary>
+        /// Tests GetOrderById method. This is a crud.
+        /// </summary>
+        /// <param name="id">Id.</param>
+        [TestCase(3)]
+        public void TestGetOneOrder(int id)
+        {
+            this.ShopLogicWithMocks();
+
+            this.MockedOrderRepository.Setup(repo => repo.GetOne(It.Is<int>(id => id >= 0 && id < this.orders.Count))).Returns(this.orders[id]);
+
+            var result = this.ShopLogic.GetOrderById(id);
+
+            this.MockedOrderRepository.Verify(x => x.GetOne(id), Times.Exactly(1));
+            this.MockedOrderRepository.Verify(x => x.GetOne(50), Times.Never);
+        }
+
+        /// <summary>
+        /// Tests GetAllSkiEquipments method. This is a crud.
+        /// </summary>
+        [Test]
+        public void TestGetAllSkiEquipments()
+        {
+            this.ShopLogicWithMocks();
+
+            var result = this.ShopLogic.GetAllSkiEquipments();
+
+            this.MockedSkiEquipmentsRepository.Verify(x => x.GetAll(), Times.Once);
+        }
+
+        /// <summary>
+        /// This is the Setup for the ShopLogic tests.
+        /// </summary>
+        [SetUp]
+        public void ShopLogicWithMocks()
         {
             this.MockedOrderRepository = new Mock<IOrderRepository>(MockBehavior.Loose);
             this.MockedSkiEquipmentsRepository = new Mock<ISkiEquipmentsRepository>(MockBehavior.Loose);
@@ -176,7 +208,7 @@ namespace SkiRental.Logic.Tests
             this.MockedCustomerRepo.Setup(repo => repo.GetAll()).Returns(this.customers.AsQueryable());
             this.MockedOrderRepository.Setup(repo => repo.GetAll()).Returns(this.orders.AsQueryable());
             this.MockedSkiEquipmentsRepository.Setup(repo => repo.GetAll()).Returns(this.skiEquipments.AsQueryable());
-            return new ShopLogic(this.MockedOrderRepository.Object, this.MockedSkiEquipmentsRepository.Object);
+            this.ShopLogic = new ShopLogic(this.MockedOrderRepository.Object, this.MockedSkiEquipmentsRepository.Object);
         }
     }
 }

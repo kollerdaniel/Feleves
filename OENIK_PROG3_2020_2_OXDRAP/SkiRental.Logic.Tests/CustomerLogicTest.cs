@@ -31,12 +31,15 @@ namespace SkiRental.Logic.Tests
         [OneTimeSetUp]
         public void Setup()
         {
-            this.addtest = new Customer() { CustomerId = 4, FirstName = "Ken", LastName = "Cobbett", Password = "kencobbett098", Birthdate = new DateTime(1981, 04, 16), Difficulty = "pro", Email = "kencobbett@gmail.com", Postcode = 12842, Size = 190 };
+            this.MockedCustomerRepository = new Mock<ICustomerRepository>(MockBehavior.Loose);
             this.customers = new List<Customer>();
+            this.addtest = new Customer() { CustomerId = 4, FirstName = "Ken", LastName = "Cobbett", Password = "kencobbett098", Birthdate = new DateTime(1981, 04, 16), Difficulty = "pro", Email = "kencobbett@gmail.com", Postcode = 12842, Size = 190 };
 
             this.customers.Add(new Customer() { CustomerId = 1, FirstName = "Louie", LastName = "Rogers", Password = "Louirog123", Birthdate = new DateTime(1988, 02, 17), Difficulty = "advanced", Email = "louierogers@gmail.com", Postcode = 12842, Size = 170 });
             this.customers.Add(new Customer() { CustomerId = 2, FirstName = "Theo", LastName = "Lee", Password = "Theolee.123", Birthdate = new DateTime(2001, 04, 06), Difficulty = "beginner", Email = "theolee@gmail.com", Postcode = 12847, Size = 170 });
             this.customers.Add(new Customer() { CustomerId = 3, FirstName = "Regina", LastName = "Mills", Password = "Remi22", Birthdate = new DateTime(1995, 02, 22), Difficulty = "advanced", Email = "reginamills@gmail.com", Postcode = 13360, Size = 160 });
+            this.MockedCustomerRepository.Setup(repo => repo.GetAll()).Returns(this.customers.AsQueryable());
+            this.CustomerLogic = new CustomerLogic(this.MockedCustomerRepository.Object);
         }
 
         /// <summary>
@@ -47,9 +50,7 @@ namespace SkiRental.Logic.Tests
         [TestCase(1)]
         public void TestGetCustomerByID(int id)
         {
-            this.MockedCustomerRepository = new Mock<ICustomerRepository>(MockBehavior.Loose);
-            this.CustomerLogic = new CustomerLogic(this.MockedCustomerRepository.Object);
-
+            this.Setup();
             this.MockedCustomerRepository.Setup(repo => repo.GetOne(It.Is<int>(id => id >= 0 && id < this.customers.Count))).Returns(this.customers[id]);
 
             var result = this.CustomerLogic.GetCustomerById(id);
@@ -64,10 +65,7 @@ namespace SkiRental.Logic.Tests
         [Test]
         public void TestGetAllCustomers()
         {
-            this.MockedCustomerRepository = new Mock<ICustomerRepository>(MockBehavior.Loose);
-            this.CustomerLogic = new CustomerLogic(this.MockedCustomerRepository.Object);
-
-            this.MockedCustomerRepository.Setup(repo => repo.GetAll()).Returns(this.customers.AsQueryable());
+            this.Setup();
 
             var result = this.CustomerLogic.GetAllCustomers();
 
@@ -80,8 +78,7 @@ namespace SkiRental.Logic.Tests
         [Test]
         public void TestCreateCustomer()
         {
-            this.MockedCustomerRepository = new Mock<ICustomerRepository>(MockBehavior.Loose);
-            this.CustomerLogic = new CustomerLogic(this.MockedCustomerRepository.Object);
+            this.Setup();
 
             this.MockedCustomerRepository.Setup(repo => repo.Insert(It.IsAny<Customer>()));
 
@@ -98,8 +95,7 @@ namespace SkiRental.Logic.Tests
         [TestCase(1, "newpassword")]
         public void TestUpdate(int id, string newPassword)
         {
-            this.MockedCustomerRepository = new Mock<ICustomerRepository>(MockBehavior.Loose);
-            this.CustomerLogic = new CustomerLogic(this.MockedCustomerRepository.Object);
+            this.Setup();
 
             this.MockedCustomerRepository.Setup(repo => repo.ChangePassword(It.IsAny<int>(), It.IsAny<string>()));
 
