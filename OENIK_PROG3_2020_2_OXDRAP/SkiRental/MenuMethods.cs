@@ -263,14 +263,14 @@ namespace SkiRental.Program
         /// <summary>
         /// This is the customer eraser menu method.
         /// </summary>
-        /// <param name="customer">Customer repository.</param>
-        public static void DeleteCustomer(CustomerRepository customer)
+        /// <param name="customerLogic">Customer logic class.</param>
+        public static void DeleteCustomer(CustomerLogic customerLogic)
         {
             int id = IntParse(Enter.ToString());
             bool valid = false;
             try
             {
-                customer?.GetOne(id);
+                customerLogic?.GetCustomerById(id);
                 valid = true;
             }
             catch (ArgumentException)
@@ -280,7 +280,7 @@ namespace SkiRental.Program
 
             if (valid)
             {
-                bool exists = customer.Remove(id);
+                bool exists = customerLogic.DeleteCustomer(id);
                 if (exists)
                 {
                     string print = "Entity deleted.";
@@ -299,14 +299,14 @@ namespace SkiRental.Program
         /// <summary>
         /// This is the order eraser menu method.
         /// </summary>
-        /// <param name="order">Order repository.</param>
-        public static void DeleteOrder(OrderRepository order)
+        /// <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        public static void DeleteOrder(ShopLogic shopLogic)
         {
             int id = IntParse(Enter.ToString());
             bool valid = false;
             try
             {
-                order?.GetOne(id);
+                shopLogic?.GetOrderById(id);
                 valid = true;
             }
             catch (ArgumentException)
@@ -316,7 +316,7 @@ namespace SkiRental.Program
 
             if (valid)
             {
-                bool exists = order.Remove(id);
+                bool exists = shopLogic.DeleteOrder(id);
                 if (exists)
                 {
                     string print = "Entity deleted.";
@@ -335,14 +335,14 @@ namespace SkiRental.Program
         /// <summary>
         /// This is the order eraser menu method.
         /// </summary>
-        /// <param name="skiEquipments">Ski equipments repository.</param>
-        public static void DeleteEquipment(SkiEquipmentsRepository skiEquipments)
+        /// <param name="shopLogic">Logic for Orders repository and SkiEqupments repository.</param>
+        public static void DeleteEquipment(ShopLogic shopLogic)
         {
             int id = IntParse(Enter.ToString());
             bool valid = false;
             try
             {
-                skiEquipments?.GetOne(id);
+                shopLogic?.GetSkiEquipmentsById(id);
                 valid = true;
             }
             catch (ArgumentException)
@@ -352,7 +352,7 @@ namespace SkiRental.Program
 
             if (valid)
             {
-                bool exists = skiEquipments.Remove(id);
+                bool exists = shopLogic.DeleteEquipment(id);
                 if (exists)
                 {
                     string print = "Entity deleted.";
