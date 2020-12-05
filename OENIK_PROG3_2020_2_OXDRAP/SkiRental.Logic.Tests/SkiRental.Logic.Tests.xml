@@ -68,5 +68,21 @@
             </summary>
             <param name="id">Id.</param>
         </member>
+        <member name="M:SkiRental.Logic.Tests.ShopLogicTest.TestGetOneOrder(System.Int32)">
+            <summary>
+            Tests GetOrderById method. This is a crud.
+            </summary>
+            <param name="id">Id.</param>
+        </member>
+        <member name="M:SkiRental.Logic.Tests.ShopLogicTest.TestGetAllSkiEquipments">
+            <summary>
+            Tests GetAllSkiEquipments method. This is a crud.
+            </summary>
+        </member>
+        <member name="M:SkiRental.Logic.Tests.ShopLogicTest.ShopLogicWithMocks">
+            <summary>
+            This is the Setup for the ShopLogic tests.
+            </summary>
+        </member>
     </members>
 </doc>

@@ -186,6 +186,24 @@
             <param name="id">ID.</param>
             <returns>It returns the entity does exists.</returns>
         </member>
+        <member name="M:SkiRental.Logic.IShopLogic.PaidHeadAsync">
+            <summary>
+            It lists all the Head skis for which they have already been paid.
+            </summary>
+            <returns>An async list.</returns>
+        </member>
+        <member name="M:SkiRental.Logic.IShopLogic.PromotionOver170Async">
+            <summary>
+            It lists all the skis, that have promotion.
+            </summary>
+            <returns>An async list.</returns>
+        </member>
+        <member name="M:SkiRental.Logic.IShopLogic.BeginnersWithCreditCardAsync">
+            <summary>
+            Lists all the beginner customers who use credit card.
+            </summary>
+            <returns>An async list.</returns>
+        </member>
         <member name="T:SkiRental.Logic.PaidResult">
             <summary>
             This is a result class for a noncrud method.
@@ -288,6 +306,15 @@
             <inheritdoc/>
         </member>
         <member name="M:SkiRental.Logic.ShopLogic.DeleteEquipment(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.PaidHeadAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.PromotionOver170Async">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.Logic.ShopLogic.BeginnersWithCreditCardAsync">
             <inheritdoc/>
         </member>
     </members>
