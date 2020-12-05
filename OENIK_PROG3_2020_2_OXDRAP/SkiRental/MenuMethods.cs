@@ -17,6 +17,7 @@ namespace SkiRental.Program
     public static class MenuMethods
     {
         private const string Enter = "Enter id here: ";
+        private const string PressEnter = "Press Enter";
         private const string Selected = "\n:: Selected Item ::\n";
         private const string Other = "Try an other ID:";
         private const string Saved = "Saved!";
@@ -200,7 +201,7 @@ namespace SkiRental.Program
             bool valid = false;
             try
             {
-                shopLogic?.GetOrderById(id);
+                shopLogic?.GetSkiEquipmentsById(id);
                 valid = true;
             }
             catch (ArgumentException)
@@ -212,7 +213,7 @@ namespace SkiRental.Program
             {
                 Console.WriteLine(Selected.ToString());
 
-                Console.WriteLine(shopLogic?.GetOrderById(id).ToString());
+                Console.WriteLine(shopLogic?.GetSkiEquipmentsById(id).ToString());
                 const string Np = "Enter new price here: ";
 
                 int price = IntParse(Np.ToString());
@@ -235,7 +236,7 @@ namespace SkiRental.Program
             bool valid = false;
             try
             {
-                shopLogic?.GetSkiEquipmentsById(id);
+                shopLogic?.GetOrderById(id);
                 valid = true;
             }
             catch (ArgumentException)
@@ -247,11 +248,21 @@ namespace SkiRental.Program
             {
                 Console.WriteLine(Selected.ToString());
 
-                Console.WriteLine(shopLogic?.GetSkiEquipmentsById(id).ToString());
-                const string Npm = "Enter new payment method here: ";
-                Console.WriteLine(Npm.ToString());
-
-                string payment = Console.ReadLine();
+                Console.WriteLine(shopLogic?.GetOrderById(id).ToString());
+                Console.WriteLine(PressEnter.ToString());
+                valid = false;
+                string payment = string.Empty;
+                do
+                {
+                    const string Npm = "Enter new payment method here: (Credit Card/PayPal)";
+                    payment = Console.ReadLine();
+                    Console.WriteLine(Npm.ToString());
+                    if (payment == "Credit Card" || payment == "PayPal")
+                    {
+                        valid = true;
+                    }
+                }
+                while (!valid);
 
                 shopLogic?.ChangePayment(id, payment);
 
@@ -376,19 +387,50 @@ namespace SkiRental.Program
         public static void InsertCustomer(CustomerLogic customer)
         {
             customer?.GetAllCustomers().ToList().ForEach(x => Console.WriteLine(x));
-            ToConsole("\nEnter your firstname:");
-            string firstname = Console.ReadLine();
-            ToConsole("\nEnter your lastname:");
-            string lastname = Console.ReadLine();
-            ToConsole("\nEnter your password:");
-            string password = Console.ReadLine();
-            ToConsole("\nEnter your difficulty:");
-            string difficulty = Console.ReadLine();
+            string firstname = string.Empty;
+            do
+            {
+                ToConsole("\nEnter your firstname:");
+                firstname = Console.ReadLine();
+            }
+            while (firstname == null);
+
+            string lastname = string.Empty;
+            do
+            {
+                ToConsole("\nEnter your lastname:");
+                lastname = Console.ReadLine();
+            }
+            while (lastname == null);
+
+            string password = string.Empty;
+            do
+            {
+                ToConsole("\nEnter your password:");
+                password = Console.ReadLine();
+            }
+            while (password == null);
+
+            string difficulty = string.Empty;
+            do
+            {
+                ToConsole("\nEnter your difficulty: (beginner / advanced / pro)");
+                difficulty = Console.ReadLine();
+            }
+            while (difficulty == null);
+
             int size = IntParse("\nEnter your size");
             DateTime birthdate = DateParse("\nEnter your birthdate:");
-            int postcode = IntParse("\nEnter your postcode");
-            ToConsole("\nEnter your email:");
-            string email = Console.ReadLine();
+            int postcode = IntParse("\nEnter your postcode: (YYYY.MM.DD)");
+
+            string email = string.Empty;
+            do
+            {
+                ToConsole("\nEnter your email: ");
+                email = Console.ReadLine();
+            }
+            while (email == null);
+
             customer?.CreateCustomer(new Data.Customer() { FirstName = firstname, LastName = lastname, Password = password, Difficulty = difficulty, Size = size, Birthdate = birthdate, Postcode = postcode, Email = email });
             ToConsole("\nNew customer succesfully created!");
             ListAllC(customer);
@@ -401,8 +443,15 @@ namespace SkiRental.Program
         public static void InsterOrder(ShopLogic shop)
         {
             shop?.GetAllOrders().ToList().ForEach(x => Console.WriteLine(x));
-            ToConsole("\nEnter payment method:");
-            string payment = Console.ReadLine();
+
+            string payment = string.Empty;
+            do
+            {
+                ToConsole("\nEnter payment:");
+                payment = Console.ReadLine();
+            }
+            while (payment == "Credit Card" || payment == "PayPal");
+
             DateTime firstdate = DateParse("\nEnter first date:");
             DateTime lastdate = DateParse("\nEnter last date:");
             int promotion = IntParse("\nEnter promotion:");
@@ -432,13 +481,33 @@ namespace SkiRental.Program
         public static void InsterEquipment(ShopLogic shop)
         {
             shop?.GetAllSkiEquipments().ToList().ForEach(x => Console.WriteLine(x));
+
             int orderID = IntParse("\nEnter order's ID: ");
-            ToConsole("\nEnter name:");
-            string name = Console.ReadLine();
-            ToConsole("\nEnter manufacturer:");
-            string manufacturer = Console.ReadLine();
-            ToConsole("\nEnter difficulty:");
-            string difficulty = Console.ReadLine();
+
+            string name = string.Empty;
+            do
+            {
+                ToConsole("\nEnter name: ");
+                name = Console.ReadLine();
+            }
+            while (name == null);
+
+            string manufacturer = string.Empty;
+            do
+            {
+                ToConsole("\nEnter manufacturer: ");
+                manufacturer = Console.ReadLine();
+            }
+            while (manufacturer == null);
+
+            string difficulty = string.Empty;
+            do
+            {
+                ToConsole("\nEnter difficulty: (beginner / advanced / pro)");
+                difficulty = Console.ReadLine();
+            }
+            while (difficulty == null);
+
             int price = IntParse("\nEnter price:");
             int size = IntParse("\nEnter size:");
             string validS = string.Empty;
