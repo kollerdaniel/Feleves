@@ -420,7 +420,7 @@ namespace SkiRental.Program
             while (difficulty == null);
 
             int size = IntParse("\nEnter your size");
-            DateTime birthdate = DateParse("\nEnter your birthdate:");
+            DateTime birthdate = DateParse("\nEnter your birthdate: (YYYY.MM.DD)");
             int postcode = IntParse("\nEnter your postcode: (YYYY.MM.DD)");
 
             string email = string.Empty;
