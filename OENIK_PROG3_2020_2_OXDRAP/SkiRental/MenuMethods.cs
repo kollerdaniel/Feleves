@@ -421,7 +421,7 @@ namespace SkiRental.Program
 
             int size = IntParse("\nEnter your size");
             DateTime birthdate = DateParse("\nEnter your birthdate: (YYYY.MM.DD)");
-            int postcode = IntParse("\nEnter your postcode: (YYYY.MM.DD)");
+            int postcode = IntParse("\nEnter your postcode: ");
 
             string email = string.Empty;
             do
