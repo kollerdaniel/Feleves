@@ -45,7 +45,7 @@ namespace SkiRental.Program
                 .Add("Back", ConsoleMenu.Close).Show())
                 .Add("UPDATE ...", () => new ConsoleMenu()
                 .Add("Customer => New password", () => MenuMethods.ChangePassword(customerLogic))
-                .Add("Order => New price", () => MenuMethods.ChangePrice(shopLogic))
+                .Add("Ski Equipment => New price", () => MenuMethods.ChangePrice(shopLogic))
                 .Add("Order => New payment method", () => MenuMethods.ChangePayment(shopLogic))
                 .Add("Back", ConsoleMenu.Close).Show())
                 .Add("CREATE ...", () => new ConsoleMenu()
