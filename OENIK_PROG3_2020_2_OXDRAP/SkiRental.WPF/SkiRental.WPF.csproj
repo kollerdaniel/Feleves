@@ -27,7 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="UI\" />
     <Folder Include="WM\" />
     <Folder Include="BL\" />
