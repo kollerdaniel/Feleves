@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiRental.Logic", "SkiRenta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiRental.Logic.Tests", "SkiRental.Logic.Tests\SkiRental.Logic.Tests.csproj", "{81FED368-4B8A-4A6C-B1F0-EB387A321630}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiRental.WPF", "SkiRental.WPF\SkiRental.WPF.csproj", "{5305A8B4-8F3D-493A-B072-1C536294F473}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{81FED368-4B8A-4A6C-B1F0-EB387A321630}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81FED368-4B8A-4A6C-B1F0-EB387A321630}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81FED368-4B8A-4A6C-B1F0-EB387A321630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5305A8B4-8F3D-493A-B072-1C536294F473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5305A8B4-8F3D-493A-B072-1C536294F473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5305A8B4-8F3D-493A-B072-1C536294F473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5305A8B4-8F3D-493A-B072-1C536294F473}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
