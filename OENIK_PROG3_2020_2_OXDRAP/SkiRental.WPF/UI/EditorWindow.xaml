@@ -3,10 +3,47 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SkiRental.WPF.UI"
+        xmlns:ui="clr-namespace:SkiRental.WPF.UI"
+        xmlns:vm="clr-namespace:SkiRental.WPF.VM"
         mc:Ignorable="d"
-        Title="EditorWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="EditorWindow" Height="344" Width="318">
+    <Window.Resources>
+        <vm:EditorViewModel x:Key="VM" />
+    </Window.Resources>
+    <Grid DataContext="{StaticResource VM}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="693*"/>
+            <ColumnDefinition Width="107*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="25,36,0,0" VerticalAlignment="Top" Height="32" Width="90"/>
+        <Label Content="Manufacturer" HorizontalAlignment="Left" Margin="25,73,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Difficulty" HorizontalAlignment="Left" Margin="25,104,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="25,135,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Size" HorizontalAlignment="Left" Margin="25,166,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox HorizontalAlignment="Left" Margin="140,36,0,0" Text="{Binding Path=SkiEquipment.Name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="32"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="140,138,0,0" Text="{Binding Path=SkiEquipment.Price}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="140,166,0,0" Text="{Binding Path=SkiEquipment.Size}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Height="23" ItemsSource="{Binding Path=Manufacturers}" SelectedItem="{Binding Path=SkiEquipment.Manufacturer}" Margin="140,76,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Height="23" ItemsSource="{Binding Path=Difficulties}" SelectedItem="{Binding Path=SkiEquipment.Difficulty}" Margin="140,110,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+        </ComboBox>
+        <Button Content="Ok" HorizontalAlignment="Left" Height="30" Margin="31,224,0,0" VerticalAlignment="Top" Width="102" Click="OkClick"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Height="30" Margin="161,224,0,0" VerticalAlignment="Top" Width="109" Click="CancelClick"/>
     </Grid>
 </Window>

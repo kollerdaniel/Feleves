@@ -1,33 +1,53 @@
-﻿using SkiRental.WPF.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿// <copyright file="EditorWindow.xaml.cs" company="OXDRAP">
+// Copyright (c) OXDRAP. All rights reserved.
+// </copyright>
 
 namespace SkiRental.WPF.UI
 {
+    using System.Windows;
+    using SkiRental.WPF.Data;
+    using SkiRental.WPF.VM;
+
     /// <summary>
-    /// Interaction logic for EditorWindow.xaml
+    /// Interaction logic for EditorWindow.xaml.
     /// </summary>
     public partial class EditorWindow : Window
     {
+        private readonly EditorViewModel vM;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditorWindow"/> class.
+        /// </summary>
         public EditorWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+
+            this.vM = this.FindResource("VM") as EditorViewModel;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditorWindow"/> class.
+        /// </summary>
+        /// <param name="oldSkiEquipment">Old ski equipment.</param>
         public EditorWindow(SkiEquipment oldSkiEquipment)
+            : this()
         {
+            this.vM.SkiEquipment = oldSkiEquipment;
+        }
 
+        /// <summary>
+        /// Gets a ski equipment.
+        /// </summary>
+        public SkiEquipment SkiEquipment { get => this.vM.SkiEquipment; }
+
+        private void OkClick(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
+
+        private void CancelClick(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
         }
     }
 }
