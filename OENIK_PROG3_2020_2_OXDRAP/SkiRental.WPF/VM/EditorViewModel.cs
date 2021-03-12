@@ -32,7 +32,7 @@ namespace SkiRental.WPF.VM
         /// <summary>
         /// Gets the manufacurers.
         /// </summary>
-        public Array Manufacturers
+        public static Array Manufacturers
         {
             get { return Enum.GetValues(typeof(ManufacturerType)); }
         }
@@ -40,7 +40,7 @@ namespace SkiRental.WPF.VM
         /// <summary>
         /// Gets the difficulties.
         /// </summary>
-        public Array Difficulties
+        public static Array Difficulties
         {
             get { return Enum.GetValues(typeof(DifficultyType)); }
         }
