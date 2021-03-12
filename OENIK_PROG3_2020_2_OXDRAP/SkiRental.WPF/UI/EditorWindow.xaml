@@ -9,6 +9,7 @@
         Title="EditorWindow" Height="344" Width="318">
     <Window.Resources>
         <vm:EditorViewModel x:Key="VM" />
+        <ui:ManufacturerToBrushConverter x:Key="ManufacturerToBrushConverter" />
     </Window.Resources>
     <Grid DataContext="{StaticResource VM}">
         <Grid.ColumnDefinitions>
@@ -23,7 +24,7 @@
         <TextBox HorizontalAlignment="Left" Margin="140,36,0,0" Text="{Binding Path=SkiEquipment.Name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="32"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="140,138,0,0" Text="{Binding Path=SkiEquipment.Price}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="140,166,0,0" Text="{Binding Path=SkiEquipment.Size}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Height="23" ItemsSource="{Binding Path=Manufacturers}" SelectedItem="{Binding Path=SkiEquipment.Manufacturer}" Margin="140,76,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5">
+        <ComboBox HorizontalAlignment="Left" Height="23" ItemsSource="{Binding Path=Manufacturers}" SelectedItem="{Binding Path=SkiEquipment.Manufacturer, Converter={StaticResource ManufacturerToBrushConverter}}" Margin="140,76,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5">
             <ComboBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1"/>
