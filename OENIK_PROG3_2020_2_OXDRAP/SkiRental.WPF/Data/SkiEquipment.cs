@@ -4,6 +4,7 @@
 
 namespace SkiRental.WPF.Data
 {
+    using System.Linq;
     using GalaSoft.MvvmLight;
 
     /// <summary>
@@ -73,6 +74,16 @@ namespace SkiRental.WPF.Data
         {
             get { return this.difficulty; }
             set { this.Set(ref this.difficulty, value); }
+        }
+
+        /// <summary>
+        /// It makes a copy of the implemented objects.
+        /// </summary>
+        /// <param name="other">A ski equipment object.</param>
+        public void CopyFrom(SkiEquipment other)
+        {
+            this.GetType().GetProperties().ToList().ForEach(
+                prop => prop.SetValue(this, prop.GetValue(other)));
         }
     }
 }
