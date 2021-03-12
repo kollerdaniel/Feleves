@@ -1,28 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿// <copyright file="MainWindow.xaml.cs" company="OXDRAP">
+// Copyright (c) OXDRAP. All rights reserved.
+// </copyright>
 
 namespace SkiRental.WPF
 {
+    using System.Windows;
+    using GalaSoft.MvvmLight.Messaging;
+    using SkiRental.WPF.VM;
+
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml.
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainViewModel vM;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindow"/> class.
+        /// </summary>
         public MainWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.vM = this.FindResource("VM") as MainViewModel;
+            Messenger.Default.Register<string>(this, "LogicResult", msg => { MessageBox.Show(msg); });
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Messenger.Default.Unregister(this);
         }
     }
 }

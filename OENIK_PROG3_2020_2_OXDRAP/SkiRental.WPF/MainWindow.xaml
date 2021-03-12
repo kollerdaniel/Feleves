@@ -4,9 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SkiRental.WPF"
+        xmlns:ui="clr-namespace:SkiRental.WPF.UI"
+        xmlns:vm="clr-namespace:SkiRental.WPF.VM"
+        xmlns:data="clr-namespace:SkiRental.WPF.Data"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="356" Width="378"
+        Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.Resources>
+        <vm:MainViewModel x:Key="VM" />
+        <ui:ManufacturerToBrushConverter x:Key="ManufacturerToBrushConverter" />
 
+        <DataTemplate x:Key="listTemplate" DataType="{x:Type data:SkiEquipment}">
+            <DockPanel Background="{Binding Path=Manufacturer, Converter={StaticResource ManufacturerToBrushConverter}}" >
+                <Label Content="{Binding Path=Name}" DockPanel.Dock="Top" HorizontalContentAlignment="Center" />
+                <Label Content="{Binding Path=Manufacturer}" DockPanel.Dock="Bottom" HorizontalContentAlignment="Center" />
+                <Label Content="{Binding Path=Difficulty}" DockPanel.Dock="Left" />
+                <Label Content="{Binding Path=Size}" DockPanel.Dock="Right" />
+                <Label Content="{Binding Path=Price}" />
+            </DockPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource VM}">
+        <ListBox ItemTemplate="{StaticResource listTemplate}" ItemsSource="{Binding Path=Equipments}" SelectedItem="{Binding Path=EquipmentSelected}" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" Height="251" Margin="10,10,0,0" VerticalAlignment="Top" Width="210"/>
+        <Button Command="{Binding Path=AddCmd}" Content="ADD" HorizontalAlignment="Left" Margin="255,15,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Command="{Binding Path=ModCmd}" Content="MOD" HorizontalAlignment="Left" Margin="255,45,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Command="{Binding Path=DelCmd}" Content="DEL" HorizontalAlignment="Left" Margin="255,75,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
