@@ -32,11 +32,11 @@ namespace SkiRental.WPF.VM
 
             if (this.IsInDesignMode)
             {
-                SkiEquipment s1 = new SkiEquipment() { Name = "Supershape", Price = 300, Difficulty = DifficultyType.Advanced };
-                SkiEquipment s2 = new SkiEquipment() { Name = "Redster", Price = 400, Size = 170 };
+                SkiEquipment s1 = new SkiEquipment() { Name = "Supershape", Price = 300, Difficulty = DifficultyType.Advanced, Manufacturer = ManufacturerType.Rossignol };
+                SkiEquipment s2 = new SkiEquipment() { Name = "Redster", Price = 400, Size = 170, Manufacturer = ManufacturerType.Atomic };
 
                 this.Equipments.Add(s1);
-                this.Equipments.Add(s1);
+                this.Equipments.Add(s2);
             }
 
             this.AddCmd = new RelayCommand(() => this.logic.AddSkiEquipment(this.Equipments));
