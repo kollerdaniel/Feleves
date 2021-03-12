@@ -4,6 +4,7 @@
 
 namespace SkiRental.WPF.WM
 {
+    using System;
     using GalaSoft.MvvmLight;
     using SkiRental.WPF.Data;
 
@@ -13,6 +14,36 @@ namespace SkiRental.WPF.WM
     public class EditorViewModel : ViewModelBase
     {
         private SkiEquipment skiEquipment;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditorViewModel"/> class.
+        /// </summary>
+        public EditorViewModel()
+        {
+            this.skiEquipment = new SkiEquipment();
+            if (this.IsInDesignMode)
+            {
+                this.skiEquipment.Name = "Unknown Ski";
+                this.skiEquipment.Price = 100;
+                this.skiEquipment.Size = 150;
+            }
+        }
+
+        /// <summary>
+        /// Gets the manufacurers.
+        /// </summary>
+        public static Array Manufacturers
+        {
+            get { return Enum.GetValues(typeof(ManufacturerType)); }
+        }
+
+        /// <summary>
+        /// Gets the difficulties.
+        /// </summary>
+        public static Array Difficulties
+        {
+            get { return Enum.GetValues(typeof(DifficultyType)); }
+        }
 
         /// <summary>
         /// Gets or sets a ski equipment.
