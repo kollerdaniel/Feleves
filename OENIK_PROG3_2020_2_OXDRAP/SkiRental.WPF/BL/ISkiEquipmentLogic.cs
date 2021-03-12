@@ -21,8 +21,8 @@ namespace SkiRental.WPF.BL
         /// <summary>
         /// This method modifis an object.
         /// </summary>
-        /// <param name="skiEquipmentModify">A ski equipment object.</param>
-        void ModSkiEquipment(SkiEquipment skiEquipmentModify);
+        /// <param name="skiEquipmentToModify">A ski equipment object.</param>
+        void ModSkiEquipment(SkiEquipment skiEquipmentToModify);
 
         /// <summary>
         /// This method deletes an object.
