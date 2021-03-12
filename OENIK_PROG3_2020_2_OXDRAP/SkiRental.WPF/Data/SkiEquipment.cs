@@ -14,13 +14,13 @@ namespace SkiRental.WPF.Data
     {
         private string name;
 
-        private string manufacturer;
+        private ManufacturerType manufacturer;
 
         private int price;
 
         private int size;
 
-        private string difficulty;
+        private DifficultyType difficulty;
 
         /// <summary>
         /// Gets or sets the id of the equipments, and this is the primary key.
@@ -43,7 +43,7 @@ namespace SkiRental.WPF.Data
         /// <summary>
         /// Gets or sets the manufacturer of the equipments.
         /// </summary>
-        public string Manufacturer
+        public ManufacturerType Manufacturer
         {
             get { return this.manufacturer; }
             set { this.Set(ref this.manufacturer, value); }
@@ -70,7 +70,7 @@ namespace SkiRental.WPF.Data
         /// <summary>
         /// Gets or sets the difficulty of the equipments.
         /// </summary>
-        public string Difficulty
+        public DifficultyType Difficulty
         {
             get { return this.difficulty; }
             set { this.Set(ref this.difficulty, value); }
