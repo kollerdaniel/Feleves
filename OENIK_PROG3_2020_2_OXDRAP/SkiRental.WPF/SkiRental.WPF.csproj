@@ -27,4 +27,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SkiRental.Data\SkiRental.Data.csproj" />
+  </ItemGroup>
+
 </Project>

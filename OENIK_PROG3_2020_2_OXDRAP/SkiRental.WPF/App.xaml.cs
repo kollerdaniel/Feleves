@@ -22,6 +22,8 @@ namespace SkiRental.WPF
         {
             ServiceLocator.SetLocatorProvider(() => MyIoC.Instance);
 
+            MyIoC.Instance.Register<Factory, Factory>();
+
             MyIoC.Instance.Register<IEditorService, EditorServiceViaWindow>();
 
             MyIoC.Instance.Register<IMessenger>(() => Messenger.Default);

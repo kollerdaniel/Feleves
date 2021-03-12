@@ -39,6 +39,11 @@ namespace SkiRental.WPF.VM
                 this.Equipments.Add(s2);
             }
 
+            foreach (var item in this.logic.GetAllSkiEquipment())
+            {
+                this.Equipments.Add(item);
+            }
+
             this.AddCmd = new RelayCommand(() => this.logic.AddSkiEquipment(this.Equipments));
             this.ModCmd = new RelayCommand(() => this.logic.ModSkiEquipment(this.EquipmentSelected));
             this.DelCmd = new RelayCommand(() => this.logic.DeleteSkiEquipment(this.Equipments, this.EquipmentSelected));
