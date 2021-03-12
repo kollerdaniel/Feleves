@@ -2,7 +2,7 @@
 // Copyright (c) OXDRAP. All rights reserved.
 // </copyright>
 
-namespace SkiRental.WPF.WM
+namespace SkiRental.WPF.VM
 {
     using System;
     using GalaSoft.MvvmLight;
@@ -32,7 +32,7 @@ namespace SkiRental.WPF.WM
         /// <summary>
         /// Gets the manufacurers.
         /// </summary>
-        public static Array Manufacturers
+        public Array Manufacturers
         {
             get { return Enum.GetValues(typeof(ManufacturerType)); }
         }
@@ -40,7 +40,7 @@ namespace SkiRental.WPF.WM
         /// <summary>
         /// Gets the difficulties.
         /// </summary>
-        public static Array Difficulties
+        public Array Difficulties
         {
             get { return Enum.GetValues(typeof(DifficultyType)); }
         }

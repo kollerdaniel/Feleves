@@ -2,7 +2,7 @@
 // Copyright (c) OXDRAP. All rights reserved.
 // </copyright>
 
-namespace SkiRental.WPF.WM
+namespace SkiRental.WPF.VM
 {
     using System.Collections.ObjectModel;
     using System.Windows.Input;
