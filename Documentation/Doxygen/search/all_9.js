@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['name_61',['Name',['../class_ski_rental_1_1_data_1_1_customer.html#acf82887bd9f10f77e53073d37b8a5217',1,'SkiRental.Data.Customer.Name()'],['../class_ski_rental_1_1_data_1_1_ski_equipments.html#a69b27447be193db3e70b8f8ae3cc3b8c',1,'SkiRental.Data.SkiEquipments.Name()'],['../class_ski_rental_1_1_logic_1_1_beginners_result.html#accd5f7656675c37a5e9c156ffdc02853',1,'SkiRental.Logic.BeginnersResult.Name()'],['../class_ski_rental_1_1_logic_1_1_paid_result.html#a4cf7be05ad9503ed4ace62c3690b4b08',1,'SkiRental.Logic.PaidResult.Name()']]]
+  ['lastdate_83',['LastDate',['../class_ski_rental_1_1_data_1_1_order.html#a4b381a7752bc9b81fcab903b377557d7',1,'SkiRental::Data::Order']]],
+  ['lastname_84',['LastName',['../class_ski_rental_1_1_data_1_1_customer.html#a7fd1b29be48b816dd192f9250d9fcc31',1,'SkiRental::Data::Customer']]],
+  ['listallc_85',['ListAllC',['../class_ski_rental_1_1_program_1_1_menu_methods.html#abb30ddb1400ac6c80fb91029f7caa893',1,'SkiRental::Program::MenuMethods']]],
+  ['listallo_86',['ListAllO',['../class_ski_rental_1_1_program_1_1_menu_methods.html#a59eeede94900773c91d34fc671e6734a',1,'SkiRental::Program::MenuMethods']]],
+  ['listalls_87',['ListAllS',['../class_ski_rental_1_1_program_1_1_menu_methods.html#aba8bc4bd7718dba98bb0afe5043210b5',1,'SkiRental::Program::MenuMethods']]]
 ];

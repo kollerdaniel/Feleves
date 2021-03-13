@@ -24,16 +24,20 @@
 */
 var NAVTREE =
 [
-  [ "OENIK_PROG3_2020_2_OXDRAP", "index.html", [
+  [ "OENIK_PROG4HF_2021_1_OXDRAP", "index.html", [
     [ "Packages", "namespaces.html", [
-      [ "Packages", "namespaces.html", "namespaces_dup" ]
+      [ "Packages", "namespaces.html", "namespaces_dup" ],
+      [ "Package Functions", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Properties", "functions_prop.html", null ]
@@ -47,8 +51,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_beginners_result_8cs_source.html",
-"interface_ski_rental_1_1_logic_1_1_i_shop_logic.html#a8eab34ae67056c592d869a408ebadb00"
+"_app_8g_8cs_source.html",
+"class_ski_rental_1_1_w_p_f_1_1_data_1_1_ski_equipment.html#ae9fabd7b2501df25f8ca5d89fe39a1d8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['beginnersresult_0',['BeginnersResult',['../class_ski_rental_1_1_logic_1_1_beginners_result.html',1,'SkiRental::Logic']]],
-  ['beginnerswithcreditcard_1',['BeginnersWithCreditCard',['../class_ski_rental_1_1_program_1_1_menu_methods.html#a00ac1ba604a481e47cbb40a324586183',1,'SkiRental.Program.MenuMethods.BeginnersWithCreditCard()'],['../interface_ski_rental_1_1_logic_1_1_i_shop_logic.html#a7134443d7b962d9a701e8cb73c4adad5',1,'SkiRental.Logic.IShopLogic.BeginnersWithCreditCard()'],['../class_ski_rental_1_1_logic_1_1_shop_logic.html#a1f948e3be4e083a45b326e89f6e64348',1,'SkiRental.Logic.ShopLogic.BeginnersWithCreditCard()']]],
-  ['beginnerswithcreditcardasync_2',['BeginnersWithCreditCardAsync',['../class_ski_rental_1_1_program_1_1_menu_methods.html#ad4c77057d4d4b5d5f9757be09d7d766e',1,'SkiRental.Program.MenuMethods.BeginnersWithCreditCardAsync()'],['../interface_ski_rental_1_1_logic_1_1_i_shop_logic.html#a0df3c5933c34e51944c731f0729fd058',1,'SkiRental.Logic.IShopLogic.BeginnersWithCreditCardAsync()'],['../class_ski_rental_1_1_logic_1_1_shop_logic.html#a4bd8e1671ddf63b5f1506f75c4f1faa2',1,'SkiRental.Logic.ShopLogic.BeginnersWithCreditCardAsync()']]],
-  ['birthdate_3',['Birthdate',['../class_ski_rental_1_1_data_1_1_customer.html#a5653ceab96ca067ae1a0e1f2f8709641',1,'SkiRental::Data::Customer']]]
+  ['addcmd_0',['AddCmd',['../class_ski_rental_1_1_w_p_f_1_1_v_m_1_1_main_view_model.html#ab8d00771c483a2110df3b75d2745f63f',1,'SkiRental::WPF::VM::MainViewModel']]],
+  ['addeventhandler_1',['AddEventHandler',['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#a73471f4a6d1ca4c4fceec9ad8610f0c8',1,'XamlGeneratedNamespace::GeneratedInternalTypeHelper']]],
+  ['addskiequipment_2',['AddSkiEquipment',['../interface_ski_rental_1_1_w_p_f_1_1_b_l_1_1_i_ski_equipment_logic.html#adaa2378d45c25aabae5e8f1bdc85cec2',1,'SkiRental.WPF.BL.ISkiEquipmentLogic.AddSkiEquipment()'],['../class_ski_rental_1_1_w_p_f_1_1_b_l_1_1_ski_equipment_logic.html#aaaf0179bcabb073f19e482e5dc22099d',1,'SkiRental.WPF.BL.SkiEquipmentLogic.AddSkiEquipment()']]],
+  ['advanced_3',['Advanced',['../namespace_ski_rental_1_1_w_p_f_1_1_data.html#af0e97b464158ed49c902a421122cee4ea9b6545e4cea9b4ad4979d41bb9170e2b',1,'SkiRental::WPF::Data']]],
+  ['app_4',['App',['../class_ski_rental_1_1_w_p_f_1_1_app.html',1,'SkiRental.WPF.App'],['../class_ski_rental_1_1_w_p_f_1_1_app.html#a089045fc4a53fbfaf291fcd790fb6d08',1,'SkiRental.WPF.App.App()']]],
+  ['atomic_5',['Atomic',['../namespace_ski_rental_1_1_w_p_f_1_1_data.html#a50ec5d26063f9efeb5ededd45a010a4ba557eccd321b7f10f5127c1ef27aaac7d',1,'SkiRental::WPF::Data']]]
 ];

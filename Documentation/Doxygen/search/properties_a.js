@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['size_235',['Size',['../class_ski_rental_1_1_data_1_1_customer.html#adfc58eb3472a1ae136616143e933883f',1,'SkiRental.Data.Customer.Size()'],['../class_ski_rental_1_1_data_1_1_ski_equipments.html#a5cc5654d8b7f8fbe5afb7a30cb1614a9',1,'SkiRental.Data.SkiEquipments.Size()'],['../class_ski_rental_1_1_logic_1_1_paid_result.html#a2145f55a3c21279cb426124e59a1ad7d',1,'SkiRental.Logic.PaidResult.Size()'],['../class_ski_rental_1_1_logic_1_1_promotion_result.html#ab236231f156f867afbf47a7add7f35e1',1,'SkiRental.Logic.PromotionResult.Size()']]],
-  ['skiequipments_236',['SkiEquipments',['../class_ski_rental_1_1_data_1_1_order.html#a8d23f0eaafa3d83c68aa047ea9ec1832',1,'SkiRental.Data.Order.SkiEquipments()'],['../class_ski_rental_1_1_data_1_1_ski_rental_context.html#af0cd8beeb0f9f89e5f650ff8b7be717e',1,'SkiRental.Data.SkiRentalContext.SkiEquipments()']]],
-  ['skiequipmentsid_237',['SkiEquipmentsId',['../class_ski_rental_1_1_data_1_1_ski_equipments.html#a6707075bf8e1c418a804837489bedf38',1,'SkiRental::Data::SkiEquipments']]],
-  ['status_238',['Status',['../class_ski_rental_1_1_data_1_1_ski_equipments.html#a3d90f97f053e2640b52033e854f6a8d9',1,'SkiRental::Data::SkiEquipments']]]
+  ['order_332',['Order',['../class_ski_rental_1_1_data_1_1_ski_equipments.html#acea587edfc4b4570dcefd6925adf1485',1,'SkiRental::Data::SkiEquipments']]],
+  ['orderid_333',['OrderId',['../class_ski_rental_1_1_data_1_1_order.html#a8f4bd0504e0142428e2cc66c26c34fd7',1,'SkiRental.Data.Order.OrderId()'],['../class_ski_rental_1_1_data_1_1_ski_equipments.html#a7c351c9610c83270f489f49735d03a1c',1,'SkiRental.Data.SkiEquipments.OrderId()'],['../class_ski_rental_1_1_w_p_f_1_1_data_1_1_ski_equipment.html#afd3d53600bf366a8169cdcd665b6158c',1,'SkiRental.WPF.Data.SkiEquipment.OrderId()']]],
+  ['orders_334',['Orders',['../class_ski_rental_1_1_data_1_1_customer.html#ab9e4cfb938bd3db5b59b68de59ca968d',1,'SkiRental.Data.Customer.Orders()'],['../class_ski_rental_1_1_data_1_1_ski_rental_context.html#a359aa381420e6e5444606f9f6f99a6fa',1,'SkiRental.Data.SkiRentalContext.Orders()']]]
 ];
