@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SkiRental.WPF</name>
+    </assembly>
+    <members>
+        <member name="T:SkiRental.WPF.App">
+            <summary>
+            Interaction logic for App.xaml.
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.App.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.WPF.App"/> class.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:SkiRental.WPF.BL.IEditorService">
+            <summary>
+            This is an important interface for business logic.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.BL.IEditorService.EditSkiEquipment(SkiRental.WPF.Data.SkiEquipment)">
+            <summary>
+            Whit this, I can edit a ski equipment.
+            </summary>
+            <param name="s">A ski equipment object.</param>
+            <returns>Okay or cancel.</returns>
+        </member>
+        <member name="T:SkiRental.WPF.BL.ISkiEquipmentLogic">
+            <summary>
+            It is an interface of ski equipment logic.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.BL.ISkiEquipmentLogic.AddSkiEquipment(System.Collections.Generic.IList{SkiRental.WPF.Data.SkiEquipment})">
+            <summary>
+            This method create an object.
+            </summary>
+            <param name="list">A list of ski equipments.</param>
+        </member>
+        <member name="M:SkiRental.WPF.BL.ISkiEquipmentLogic.ModSkiEquipment(SkiRental.WPF.Data.SkiEquipment)">
+            <summary>
+            This method modifis an object.
+            </summary>
+            <param name="skiEquipmentToModify">A ski equipment object.</param>
+        </member>
+        <member name="M:SkiRental.WPF.BL.ISkiEquipmentLogic.DeleteSkiEquipment(System.Collections.Generic.IList{SkiRental.WPF.Data.SkiEquipment},SkiRental.WPF.Data.SkiEquipment)">
+            <summary>
+            This method deletes an object.
+            </summary>
+            <param name="list">A list oof ski equipments.</param>
+            <param name="skiEquipment">A ski equipment object.</param>
+        </member>
+        <member name="M:SkiRental.WPF.BL.ISkiEquipmentLogic.GetAllSkiEquipment">
+            <summary>
+            This is the get all method.
+            </summary>
+            <returns>It returns a list of ski equipments.</returns>
+        </member>
+        <member name="T:SkiRental.WPF.BL.SkiEquipmentLogic">
+            <summary>
+            This is the ski equipment logic class.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.BL.SkiEquipmentLogic.#ctor(SkiRental.WPF.BL.IEditorService,GalaSoft.MvvmLight.Messaging.IMessenger,SkiRental.WPF.Factory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.WPF.BL.SkiEquipmentLogic"/> class.
+            </summary>
+            <param name="editorService">An editer service.</param>
+            <param name="messengerService">A messenger service.</param>
+            <param name="factory">A factory.</param>
+        </member>
+        <member name="M:SkiRental.WPF.BL.SkiEquipmentLogic.AddSkiEquipment(System.Collections.Generic.IList{SkiRental.WPF.Data.SkiEquipment})">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.WPF.BL.SkiEquipmentLogic.DeleteSkiEquipment(System.Collections.Generic.IList{SkiRental.WPF.Data.SkiEquipment},SkiRental.WPF.Data.SkiEquipment)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.WPF.BL.SkiEquipmentLogic.GetAllSkiEquipment">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.WPF.BL.SkiEquipmentLogic.ModSkiEquipment(SkiRental.WPF.Data.SkiEquipment)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SkiRental.WPF.Data.DifficultyType">
+            <summary>
+            Enum for difficulties.
+            </summary>
+        </member>
+        <member name="F:SkiRental.WPF.Data.DifficultyType.Beginner">
+            <summary>
+            Beginner difficulty.
+            </summary>
+        </member>
+        <member name="F:SkiRental.WPF.Data.DifficultyType.Advanced">
+            <summary>
+            Advanced difficulty.
+            </summary>
+        </member>
+        <member name="F:SkiRental.WPF.Data.DifficultyType.Pro">
+            <summary>
+            Pro difficulty.
+            </summary>
+        </member>
+        <member name="T:SkiRental.WPF.Data.ManufacturerType">
+            <summary>
+            Enum for manufacturers.
+            </summary>
+        </member>
+        <member name="F:SkiRental.WPF.Data.ManufacturerType.Head">
+            <summary>
+            Head manufacturer.
+            </summary>
+        </member>
+        <member name="F:SkiRental.WPF.Data.ManufacturerType.Atomic">
+            <summary>
+            Atomic manufacturer.
+            </summary>
+        </member>
+        <member name="F:SkiRental.WPF.Data.ManufacturerType.Rossignol">
+            <summary>
+            Rossignol manufacturer.
+            </summary>
+        </member>
+        <member name="T:SkiRental.WPF.Data.SkiEquipment">
+            <summary>
+            This is the class of the ski equipments.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.Data.SkiEquipment.SkiEquipmentsId">
+            <summary>
+            Gets or sets the id of the equipments, and this is the primary key.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.Data.SkiEquipment.OrderId">
+            <summary>
+            Gets or sets the basket id of the equipments, and it is a foreign key.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.Data.SkiEquipment.Name">
+            <summary>
+            Gets or sets the name of the equipments.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.Data.SkiEquipment.Manufacturer">
+            <summary>
+            Gets or sets the manufacturer of the equipments.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.Data.SkiEquipment.Price">
+            <summary>
+            Gets or sets the price of the equipments.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.Data.SkiEquipment.Size">
+            <summary>
+            Gets or sets the size of the equipments.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.Data.SkiEquipment.Difficulty">
+            <summary>
+            Gets or sets the difficulty of the equipments.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.Data.SkiEquipment.CopyFrom(SkiRental.WPF.Data.SkiEquipment)">
+            <summary>
+            It makes a copy of the implemented objects.
+            </summary>
+            <param name="other">A ski equipment object.</param>
+        </member>
+        <member name="T:SkiRental.WPF.Factory">
+            <summary>
+            This is the factory class.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.Factory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.WPF.Factory"/> class.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.Factory.Ctx">
+            <summary>
+            Gets or sets the datbase.
+            </summary>
+        </member>
+        <member name="T:SkiRental.WPF.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml.
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.MainWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.WPF.MainWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SkiRental.WPF.MyIoC">
+            <summary>
+            My inversion of control.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.MyIoC.Instance">
+            <summary>
+            Gets the instance of my ioc.
+            </summary>
+        </member>
+        <member name="T:SkiRental.WPF.UI.EditorServiceViaWindow">
+            <summary>
+            This is the editor service via window class.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.UI.EditorServiceViaWindow.EditSkiEquipment(SkiRental.WPF.Data.SkiEquipment)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SkiRental.WPF.UI.EditorWindow">
+            <summary>
+            Interaction logic for EditorWindow.xaml.
+            </summary>
+            <summary>
+            EditorWindow
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.UI.EditorWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.WPF.UI.EditorWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.UI.EditorWindow.#ctor(SkiRental.WPF.Data.SkiEquipment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.WPF.UI.EditorWindow"/> class.
+            </summary>
+            <param name="oldSkiEquipment">Old ski equipment.</param>
+        </member>
+        <member name="P:SkiRental.WPF.UI.EditorWindow.SkiEquipment">
+            <summary>
+            Gets a ski equipment.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.UI.EditorWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SkiRental.WPF.UI.ManufacturerToBrushConverter">
+            <summary>
+            It is a manufacturer converter class.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.UI.ManufacturerToBrushConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkiRental.WPF.UI.ManufacturerToBrushConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SkiRental.WPF.VM.EditorViewModel">
+            <summary>
+            This is an editer view model.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.VM.EditorViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.WPF.VM.EditorViewModel"/> class.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.VM.EditorViewModel.Manufacturers">
+            <summary>
+            Gets the manufacurers.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.VM.EditorViewModel.Difficulties">
+            <summary>
+            Gets the difficulties.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.VM.EditorViewModel.SkiEquipment">
+            <summary>
+            Gets or sets a ski equipment.
+            </summary>
+        </member>
+        <member name="T:SkiRental.WPF.VM.MainViewModel">
+            <summary>
+            This is the main view model class.
+            </summary>
+        </member>
+        <member name="M:SkiRental.WPF.VM.MainViewModel.#ctor(SkiRental.WPF.BL.ISkiEquipmentLogic)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.WPF.VM.MainViewModel"/> class.
+            </summary>
+            <param name="skiEquipmentLogic">Logic of ski equipments.</param>
+        </member>
+        <member name="M:SkiRental.WPF.VM.MainViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SkiRental.WPF.VM.MainViewModel"/> class.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.VM.MainViewModel.Equipments">
+            <summary>
+            Gets the collection of ski equipments.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.VM.MainViewModel.EquipmentSelected">
+            <summary>
+            Gets or sets the selected equipment.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.VM.MainViewModel.AddCmd">
+            <summary>
+            Gets the Add command.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.VM.MainViewModel.ModCmd">
+            <summary>
+            Gets the Mod command.
+            </summary>
+        </member>
+        <member name="P:SkiRental.WPF.VM.MainViewModel.DelCmd">
+            <summary>
+            Gets the Del command.
+            </summary>
+        </member>
+    </members>
+</doc>
