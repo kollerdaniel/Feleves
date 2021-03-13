@@ -12,6 +12,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>SkiRental.WPF.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
